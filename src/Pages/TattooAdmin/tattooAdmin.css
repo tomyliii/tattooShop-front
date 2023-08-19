@@ -1,0 +1,258 @@
+.tattoo-page > nav {
+  display: flex;
+
+  padding: 20px;
+}
+.tattoo-page > section {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.tattoo-page > section > div > div {
+  flex: 1;
+}
+.tattoo-page .flash-bloc {
+  background-color: rgba(255, 255, 255, 0.118);
+  display: flex;
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+.flash-bloc .info-flash {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.flash-bloc .archived {
+  background-color: rgba(255, 166, 0, 0.626);
+}
+.flash-bloc .info-flash .description {
+  word-break: break-all;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  height: 80%;
+  overflow-y: scroll;
+}
+
+.flash-bloc .one-picture {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.flash-bloc .two-pictures {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.flash-bloc .two-pictures > div {
+  height: calc((100% - 10px) / 2);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.flash-bloc .three-pictures-admin {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.flash-bloc .three-pictures-admin > div {
+  height: calc((100% - 10px) / 2);
+  width: 100%;
+}
+
+.flash-bloc .three-pictures-admin .three-pictures-seconde-part {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.flash-bloc .three-pictures-admin .three-pictures-seconde-part div {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.flash-bloc img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.flash-bloc button {
+  position: absolute;
+  font-size: 18px;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 0, 0, 0.536);
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.flash-bloc button:hover {
+  background-color: red;
+}
+
+.info-flash .hashtag {
+  font-family: "Black Ops One", cursive;
+  word-break: break-all;
+  font-size: 24px;
+  color: red;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: bolder;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.modif-flash h3,
+.info-flash h3 {
+  font-style: normal;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.tattoo-page .show-image {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.582);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.tattoo-page .show-image > div {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tattoo-page .show-image > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.tattoo-page .modif-flash form {
+  background-color: rgba(255, 255, 255, 0.118);
+  border: white 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+textarea {
+  resize: none;
+}
+.tattoo-page .modif-flash input,
+.tattoo-page .modif-flash textarea {
+  width: 80%;
+  padding: 10px 5px;
+  border: none;
+  color: white;
+  border-bottom: white solid 1px;
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  transition: all 0.3s ease-in;
+  font-size: 16px;
+}
+
+.tattoo-page .modif-flash input:focus,
+.tattoo-page .modif-flash textarea:focus {
+  background-color: rgba(225, 18, 18, 0.275);
+  outline: 0;
+}
+
+.tattoo-page .modif-flash input::placeholder,
+.tattoo-page .modif-flash textarea::placeholder {
+  color: white;
+  font-family: sans-serif;
+}
+
+.tattoo-page .modif-flash input[type="submit"] {
+  width: 30%;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.tattoo-page .modif-flash input[type="submit"]:hover {
+  background-color: red;
+  color: white;
+}
+
+.tattoo-page .modif-flash .checkbox {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tattoo-page .modif-flash .checkbox > * {
+  flex: 1;
+}
+.tattoo-page .modif-flash .checkbox > P {
+  justify-self: start;
+  flex: 1;
+}
+.tattoo-page .modif-flash .checkbox > div {
+  display: flex;
+  justify-content: flex-end;
+}
+.tattoo-page .modif-flash .checkbox input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+}
+
+.supp-flash-btn {
+  background-color: red;
+  padding: 10px;
+  width: 200px;
+  border-radius: 5px;
+  align-self: flex-end;
+}
+
+.flash-bloc .info-flash .description::-webkit-scrollbar {
+  height: 8px;
+}
+.flash-bloc .info-flash .description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.112);
+  border-radius: 20px;
+}
+.flash-bloc .info-flash .description::-webkit-scrollbar-thumb {
+  background-color: rgb(162, 7, 7);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.112);
+}

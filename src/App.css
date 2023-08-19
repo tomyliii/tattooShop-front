@@ -1,0 +1,166 @@
+body {
+  background-color: Black;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(162, 7, 7);
+  border-radius: 20px;
+  border: 3px solid white;
+}
+p,
+h2,
+h3,
+a,
+h4 {
+  color: white;
+  font-family: sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+a {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.error {
+  font-size: bold;
+  color: red;
+}
+
+button {
+  cursor: pointer;
+}
+section {
+  margin-top: 60px;
+}
+
+.exit-button {
+  color: white;
+  font-family: sans-serif;
+  background-color: black;
+  border: none;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.exit-button:hover {
+  color: red;
+}
+
+[class$="modal"] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.341);
+  z-index: 3;
+}
+[class$="modal"] > div {
+  position: relative;
+  background-color: black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: 400px;
+}
+[class="project-modal"] > div {
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+[class$="modal"] > div > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+textarea {
+  resize: none;
+}
+[class$="modal"] form > input,
+[class$="modal"] form > textarea {
+  width: 80%;
+  padding: 10px 5px;
+  border: none;
+  color: white;
+  border-bottom: white solid 1px;
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  transition: all 0.3s ease-in;
+  font-size: 16px;
+}
+
+[class$="modal"] form > input:focus,
+[class$="modal"] form > textarea:focus {
+  background-color: rgba(225, 18, 18, 0.275);
+  outline: 0;
+}
+
+[class$="modal"] form > input::placeholder,
+[class$="modal"] form > textarea::placeholder {
+  color: white;
+  font-family: sans-serif;
+}
+
+[class$="modal"] form > input[type="submit"] {
+  width: 30%;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+[class$="modal"] form > input[type="submit"]:hover {
+  background-color: red;
+  color: white;
+}
+
+.checkbox {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.archived {
+  background-color: rgba(255, 166, 0, 0.626);
+}

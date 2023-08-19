@@ -1,0 +1,154 @@
+body {
+  overflow-x: hidden;
+}
+
+.admin-section {
+  padding-top: 50px;
+  overflow-y: hidden;
+}
+.admin-section h3 {
+}
+
+.admin-section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.admin-section > div > section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.admin-section > .wrapper > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.admin-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.admin-infos > div {
+  width: 100%;
+}
+
+.admin-infos .text-pres-div {
+  display: flex;
+  gap: 30px;
+}
+
+.admin-infos .text-pres-div > p:first-of-type {
+  min-width: max-content;
+}
+.text-pres {
+  width: 100%;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
+.admin-infos button {
+  width: 150px;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.admin-infos button:hover {
+  background-color: red;
+  color: white;
+}
+
+.admin-section .infos-update,
+.admin-section .add-flash form {
+  background-color: rgba(255, 255, 255, 0.118);
+  border: white 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+textarea {
+  resize: none;
+}
+.admin-section .infos-update > input,
+.admin-section .infos-update > textarea,
+.admin-section .add-flash form > input,
+.admin-section .add-flash form > textarea {
+  width: 80%;
+  padding: 10px 5px;
+  border: none;
+  color: white;
+  border-bottom: white solid 1px;
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  transition: all 0.3s ease-in;
+  font-size: 16px;
+}
+
+.admin-section .infos-update > input:focus,
+.admin-section .infos-update > textarea:focus,
+.admin-section .add-flash form > input:focus,
+.admin-section .add-flash form > textarea:focus {
+  background-color: rgba(225, 18, 18, 0.275);
+  outline: 0;
+}
+
+.admin-section .infos-update > input::placeholder,
+.admin-section .infos-update > textarea::placeholder,
+.admin-section .add-flash form > input::placeholder,
+.admin-section .add-flash form > textarea::placeholder {
+  color: white;
+  font-family: sans-serif;
+}
+
+.cancel-form,
+.admin-section .infos-update > input[type="submit"],
+.admin-section .add-flash form > input[type="submit"] {
+  width: 30%;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+.cancel-form {
+  height: 30px;
+  color: red;
+}
+
+.admin-section .infos-update > input[type="submit"]:hover,
+.admin-section .add-flash form > input[type="submit"]:hover {
+  background-color: red;
+  color: white;
+}
+
+.checkbox {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.customer-ask h3,
+.add-flash h3 {
+  font-style: normal;
+  font-size: 20px;
+}

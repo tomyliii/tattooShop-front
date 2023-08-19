@@ -1,0 +1,53 @@
+main {
+  padding: 0 0px 50px;
+}
+.wrapper {
+  width: 1138px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#about-me-section > div {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+#about-me-section > div img {
+  translate: -50px;
+  width: 60%;
+  transform: perspective(400px) rotateY(-10deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.352);
+}
+.css-fix {
+  position: relative;
+  white-space: pre-wrap;
+  text-align: justify;
+  translate: 50px;
+  width: 400px;
+  left: 50px;
+  background-color: rgba(225, 18, 18, 0.275);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#about-me-section span {
+  color: rgb(225, 18, 18);
+}
+
+.text-about-me {
+  display: flex;
+  flex-direction: column;
+  padding: 0 150px;
+}
+
+.line1 {
+  align-self: flex-start;
+}
+.line2 {
+  align-self: flex-end;
+}

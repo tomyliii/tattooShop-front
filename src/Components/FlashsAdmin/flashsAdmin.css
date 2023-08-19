@@ -1,0 +1,77 @@
+#flashs-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.box-section .button-section {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.box-section .button-section > button {
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 254, 254, 0.526);
+  transition: all 0.2s ease-in;
+  z-index: 2;
+}
+
+.box-section .button-section > button:hover {
+  scale: 1.1;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.box-section .button-section > button:active {
+  scale: 1.2;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.trash {
+  color: rgba(255, 0, 0, 0.586);
+}
+
+.archive {
+  color: green;
+}
+.box-section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+
+#flashs-section .box-section > .archived {
+  background-color: orange;
+}
+
+.box-section > .box {
+  background-color: rgba(227, 192, 192, 0.132);
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+  transition: scale 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: calc((100% - 80px) / 5);
+}
+.box-section > .box:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.449);
+  scale: 1.03;
+}
+.box-section > .box:active {
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.449);
+  scale: 1.05;
+}
+.box-section .box img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.box-title {
+  padding: 10px;
+}

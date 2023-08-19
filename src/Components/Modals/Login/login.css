@@ -1,0 +1,28 @@
+.modal-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.modal-admin a {
+  text-decoration: underline;
+  transition: all 0.3s ease-in;
+}
+.modal-admin a:hover {
+  color: red;
+}
+.modal-admin button {
+  width: 40%;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.modal-admin button:hover {
+  background-color: red;
+  color: white;
+}

@@ -1,0 +1,124 @@
+.admin-nav {
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid white;
+}
+.admin-nav a {
+  flex: 1;
+}
+.toggle-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.booked-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.booked-list > div {
+  width: calc((100% - 20px) / 2);
+  background-color: rgba(227, 192, 192, 0.132);
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+
+  height: 300px;
+  transition: all 0.5s ease-in-out;
+}
+.booked-list .archived {
+  background-color: rgba(255, 166, 0, 0.626);
+}
+
+.booked-list > div > a {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  display: flex;
+}
+.booked-list > div .button-section {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.booked-list .button-section > button {
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 254, 254, 0.526);
+  transition: all 0.2s ease-in;
+}
+
+.booked-list .button-section > button:hover {
+  scale: 1.1;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.booked-list .button-section > button:active {
+  scale: 1.2;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.booked-list > div > a > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.booked-list .title {
+  padding: 10px;
+}
+.booked-list img {
+  width: 100%;
+  flex: 1;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+}
+
+.book-info {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  flex: 2;
+  word-break: break-all;
+}
+
+.book-info p {
+  flex-shrink: 1;
+}
+.trash {
+  color: rgba(255, 0, 0, 0.586);
+}
+
+.archive {
+  color: green;
+}
+
+.book-info::-webkit-scrollbar {
+  width: 8px;
+}
+
+.book-info::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.112);
+}
+
+.book-info::-webkit-scrollbar-thumb {
+  background-color: rgb(162, 7, 7);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.112);
+}

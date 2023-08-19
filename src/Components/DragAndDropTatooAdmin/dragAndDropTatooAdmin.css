@@ -1,0 +1,116 @@
+.dropzone-section {
+  width: 100%;
+}
+.dropzone-section > .dropzone {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px rgb(255, 255, 255) dashed;
+  margin: 30px;
+  height: 200px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(225, 18, 18, 0.275);
+  border-radius: 5px;
+  padding: 10px;
+}
+.dropzone > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+
+  height: 30px;
+
+  background-color: rgb(255, 255, 255);
+  border: rgb(255, 255, 255) 1px solid;
+
+  color: rgb(255, 0, 0);
+  width: 40%;
+  padding: 20px;
+  transition: all 0.3s ease-in;
+}
+.dropzone > button:hover {
+  background-color: red;
+  border: red 1px solid;
+  color: white;
+}
+.pictures-status {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pictures-accepted {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pictures-accepted > div {
+  display: flex;
+
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.thumb {
+  width: calc((100% - 10px) / 3);
+  flex-shrink: 0;
+}
+.thumb > div {
+  width: 100%;
+}
+.thumb > div > div {
+  position: relative;
+}
+.thumb > div button {
+  font-size: 16px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.778);
+  border: none;
+  right: 5px;
+  top: 15px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.thumb > div button:hover {
+  background-color: white;
+}
+.thumb img {
+  width: 100%;
+  aspect-ratio: 1.5;
+  object-fit: cover;
+  margin-top: 10px;
+}
+.pictures-status > p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pictures-rejected {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.pictures-rejected > ul {
+  font-family: maison-noeue, sans-serif;
+  word-break: break-all;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-type: circle;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  font-size: 14px;
+}
+.drag-Reject {
+  color: red;
+}
+
+.drag-Accept {
+  color: green;
+}

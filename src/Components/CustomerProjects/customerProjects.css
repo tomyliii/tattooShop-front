@@ -1,0 +1,126 @@
+.customer-project-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.customer-project-section > .project {
+  width: 100%;
+  background-color: rgba(227, 192, 192, 0.132);
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 400px;
+}
+.customer-project-section .archived {
+  background-color: rgba(255, 166, 0, 0.626);
+}
+.customer-project-section .button-section {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.customer-project-section .button-section > button {
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 254, 254, 0.526);
+  transition: all 0.2s ease-in;
+  z-index: 1;
+}
+
+.customer-project-section .button-section > button:hover {
+  scale: 1.1;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.customer-project-section .button-section > button:active {
+  scale: 1.2;
+  background-color: rgba(255, 254, 254, 0.833);
+}
+.trash {
+  color: rgba(255, 0, 0, 0.586);
+}
+
+.archive {
+  color: green;
+}
+
+.customer-project-section .project-infos {
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+}
+.customer-project-section .project-infos::-webkit-scrollbar {
+  width: 8px;
+}
+.customer-project-section .project-infos::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.112);
+}
+.customer-project-section .project-infos::-webkit-scrollbar-thumb {
+  background-color: rgb(162, 7, 7);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.112);
+}
+
+.customer-project-section .project-infos p {
+  word-break: break-all;
+}
+
+.customer-project-section .project-images {
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.customer-project-section .project-images img {
+  width: 100%;
+
+  object-fit: cover;
+}
+
+.customer-project-section .project-images::-webkit-scrollbar {
+  height: 8px;
+}
+.customer-project-section .project-images::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.112);
+}
+.customer-project-section .project-images::-webkit-scrollbar-thumb {
+  background-color: rgb(162, 7, 7);
+  border-radius: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.112);
+}
+
+.customer-project-section .show-image {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.582);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.customer-project-section .show-image > div {
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.customer-project-section .show-image > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

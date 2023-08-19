@@ -1,0 +1,60 @@
+[id="contact-section"] > div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+[id="contact-section"] > div > div {
+  flex: 1;
+}
+[id="contact-section"] div div > img {
+  width: 100%;
+}
+[id="contact-section"] form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+textarea {
+  resize: none;
+}
+[id="contact-section"] form > input,
+[id="contact-section"] form > textarea {
+  width: 80%;
+  padding: 10px 5px;
+  border: none;
+  color: white;
+  border-bottom: white solid 1px;
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+  padding-left: 10px;
+  transition: all 0.3s ease-in;
+  font-size: 16px;
+}
+
+[id="contact-section"] form > input:focus,
+[id="contact-section"] form > textarea:focus {
+  background-color: rgba(255, 0, 0, 0.451);
+  outline: 0;
+}
+
+[id="contact-section"] form > input::placeholder,
+[id="contact-section"] form > textarea::placeholder {
+  color: white;
+  font-family: sans-serif;
+}
+
+[id="contact-section"] form > input[type="submit"] {
+  width: 30%;
+  color: black;
+  border: none;
+  transition: all 0.3s ease-in;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+}
+
+[id="contact-section"] form > input[type="submit"]:hover {
+  background-color: red;
+  color: white;
+}
