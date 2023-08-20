@@ -57,12 +57,6 @@ export default function Home(props) {
               </p>
             </div>
           </section>
-          {/* <div className="text-about-me">
-            <h3 className="line1">
-              ❝ Des oeuvres <span>uniques</span> et <span>authentiques</span>...
-            </h3>
-            <h3 className="line2">...reproduites unee fois.❞</h3>
-          </div> */}
         </div>
         <div className="wrapper">
           <Flashs server={props.server} />

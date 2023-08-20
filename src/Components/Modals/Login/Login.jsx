@@ -12,7 +12,11 @@ export default function Login(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const handleOnClick = () => {
     props.setAdminToken("");
-    Cookies.remove("adminToken", { secure: true, expires: 7, sameSite: true });
+    Cookies.remove("adminToken", {
+      secure: true,
+      expires: 7,
+      sameSite: "strict",
+    });
   };
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -24,6 +28,7 @@ export default function Login(props) {
     Cookies.set("adminToken", response.data.token, {
       secure: true,
       expires: 7,
+      sameSite: "strict",
     });
     props.setAdminToken(response.data.token);
   };

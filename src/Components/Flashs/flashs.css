@@ -55,7 +55,7 @@
   font-size: 24px;
   color: red;
   font-style: italic;
-  word-break: break-all;
+  word-break: normal;
   text-transform: uppercase;
   font-weight: bolder;
 }
@@ -149,4 +149,63 @@
 #flashs-section form > input[type="submit"]:hover {
   background-color: red;
   color: white;
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  #flashs-section {
+    gap: 30px;
+  }
+  #flashs-section > h2 {
+    margin-bottom: 0;
+  }
+  #flashs-section > .card-section {
+    gap: 20px;
+  }
+
+  #flashs-section .card {
+    height: auto;
+  }
+
+  #flashs-section .card img {
+    aspect-ratio: 1;
+    height: 100%;
+  }
+  .infos-card {
+    padding: 10px;
+  }
+  .infos-card .card-hashtag {
+    font-size: 16px;
+  }
+
+  .box-section {
+    gap: 20px;
+  }
+
+  .box-section > .box {
+    width: calc((100% - 20px) / 2);
+  }
+
+  #flashs-section form {
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+  #flashs-section form > input {
+    width: 100%;
+  }
+
+  #flashs-section form > input[type="submit"] {
+    width: 100%;
+
+    transition: all 0.2s ease-in;
+    background-color: rgb(255, 255, 255);
+  }
+
+  #flashs-section form > input[type="submit"]:active {
+    background-color: red;
+    color: white;
+  }
 }

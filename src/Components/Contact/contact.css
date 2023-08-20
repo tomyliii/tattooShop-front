@@ -58,3 +58,20 @@ textarea {
   background-color: red;
   color: white;
 }
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  [id="contact-section"] > div {
+    flex-direction: column;
+  }
+
+  [id="contact-section"] form > input[type="submit"] {
+    transition: all 0.2s ease-in;
+  }
+
+  [id="contact-section"] form > input[type="submit"]:active {
+    background-color: red;
+    color: white;
+  }
+}

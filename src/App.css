@@ -1,5 +1,6 @@
 body {
   background-color: Black;
+  width: 100%;
 }
 
 *::-webkit-scrollbar {
@@ -87,7 +88,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.341);
+  background-color: rgba(133, 133, 133, 0.341);
   z-index: 3;
 }
 [class$="modal"] > div {
@@ -163,4 +164,43 @@ textarea {
 
 .archived {
   background-color: rgba(255, 166, 0, 0.626);
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  a {
+    font-size: 14px;
+  }
+  [class$="modal"] > div {
+    width: 90%;
+    gap: 30px;
+  }
+
+  [class$="modal"] form > input,
+  [class$="modal"] form > textarea {
+    width: 90%;
+  }
+  [class$="modal"] form > input[type="submit"] {
+    width: 40%;
+
+    transition: all 0.2s ease-in;
+  }
+
+  [class$="modal"] form > input[type="submit"]:active {
+    background-color: red;
+    color: white;
+  }
 }

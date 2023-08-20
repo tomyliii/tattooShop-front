@@ -114,3 +114,15 @@
 .drag-Accept {
   color: green;
 }
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  .pictures-accepted > div {
+    flex-direction: column;
+  }
+  .thumb {
+    width: 100%;
+  }
+}

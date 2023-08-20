@@ -39,15 +39,42 @@ main {
   color: rgb(225, 18, 18);
 }
 
-.text-about-me {
-  display: flex;
-  flex-direction: column;
-  padding: 0 150px;
+@media screen and (max-width: 992px) {
 }
 
-.line1 {
-  align-self: flex-start;
-}
-.line2 {
-  align-self: flex-end;
+@media screen and (max-width: 600px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+  }
+  #about-me-section > h2 {
+    margin-bottom: 30px;
+  }
+  #about-me-section > div {
+    width: 100%;
+    flex-direction: column;
+    padding: 5px;
+    overflow: hidden;
+    gap: 20px;
+  }
+  #about-me-section > div img {
+    translate: 0px;
+    width: 100%;
+    transform: perspective(000px) rotateY(00deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.352);
+  }
+  .css-fix {
+    translate: 0px;
+    width: 90%;
+    left: 0;
+    background-color: rgba(225, 18, 18, 0.275);
+    padding: 20px;
+    border-radius: 5px;
+  }
+  #about-me-section span {
+    font-size: 20px;
+  }
 }
