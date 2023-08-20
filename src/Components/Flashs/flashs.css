@@ -155,7 +155,7 @@
 
 @media screen and (max-width: 600px) {
   #flashs-section {
-    gap: 30px;
+    gap: 50px;
   }
   #flashs-section > h2 {
     margin-bottom: 0;
@@ -207,5 +207,8 @@
   #flashs-section form > input[type="submit"]:active {
     background-color: red;
     color: white;
+  }
+  .card-section .infos-card .description {
+    height: 50px;
   }
 }
