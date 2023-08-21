@@ -56,6 +56,10 @@
   color: red;
   font-style: italic;
   word-break: normal;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+  padding-right: 10px;
   text-transform: uppercase;
   font-weight: bolder;
 }
@@ -198,7 +202,7 @@
   }
   .infos-card .card-hashtag {
     font-size: 16px;
-    word-break: break-all;
+    word-break: normal;
   }
 
   .box-section {

@@ -163,7 +163,7 @@ nav button:hover {
     color: red;
   }
   header > div {
-    margin-left: 3%;
+    margin-left: 5%;
     gap: 10px;
   }
   header > div > H1 {
