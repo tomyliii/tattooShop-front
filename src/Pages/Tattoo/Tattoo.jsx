@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
+import hashtag from "../../assets/Tools/Functions/hashTag";
+
 export default function Tattoo(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const [errorMessageToBook, setErrorMessageToBook] = useState("");
@@ -56,12 +58,6 @@ export default function Tattoo(props) {
     }
   }, [id]);
 
-  // const hashtag = (value) => {
-  //   let keywords = "#";
-  //   if (value.includes(",")) {
-  //     return (keywords += value.replaceAll(",", `#`));
-  //   } else return (keywords += value.replaceAll(" ", " #"));
-  // };
   const handleOnClick = (value) => {
     setSelectedImg(value);
     setShowImg(true);
@@ -203,7 +199,9 @@ export default function Tattoo(props) {
                 <div className="description">
                   <p>{flash.description}</p>
                 </div>
-                {/* <p className="hashtag">{hashtag(flash.keywords)}</p> */}
+                {flash.keywords && (
+                  <p className="hashtag">{hashtag(flash.keywords)}</p>
+                )}
               </div>
               {showImg && (
                 <div
@@ -352,9 +350,11 @@ export default function Tattoo(props) {
                     <div className="infos-card">
                       <h3>{flashCard.name}</h3>
                       <p className="description">{flashCard.description}</p>
-                      <p className="card-hashtag">
-                        {/* {hashtag(flashCard.keywords)} */}
-                      </p>
+                      {flashCard.keywords && (
+                        <p className="card-hashtag">
+                          {hashtag(flashCard.keywords)}
+                        </p>
+                      )}
                     </div>
                   </Link>
                 );

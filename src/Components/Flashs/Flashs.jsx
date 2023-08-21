@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./flashs.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PagesCalculator from "../../assets/Tools/Functions/pagesCalculator";
 import Pagination from "../Pagination/Pagination";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
+import hashtag from "../../assets/Tools/Functions/hashTag";
 
 export default function Flashs(props) {
   const [flashsListe, setFlashsListe] = useState([]);
@@ -92,11 +93,6 @@ export default function Flashs(props) {
                 </div>
               ) : (
                 flashsCardList.map((flash, index) => {
-                  // let hashtag = "#";
-                  // if (flash.keywords.includes(",")) {
-                  //   hashtag += flash.keywords.replaceAll(",", " #");
-                  // } else hashtag += flash.keywords.replaceAll(" ", " #");
-
                   return (
                     <Link
                       to={`/tattoo/${flash._id}`}
@@ -112,7 +108,11 @@ export default function Flashs(props) {
                       <div className="infos-card">
                         <h3>{flash.name}</h3>
                         <p className="description">{flash.description}</p>
-                        {/* <p className="card-hashtag">{hashtag}</p> */}
+                        {flash.keywords && (
+                          <p className="card-hashtag">
+                            {hashtag(flash.keywords)}
+                          </p>
+                        )}
                       </div>
                     </Link>
                   );

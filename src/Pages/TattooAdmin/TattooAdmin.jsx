@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import Login from "../../Components/Modals/Login/Login";
 import DragAndDropTatooAdmin from "../../Components/DragAndDropTatooAdmin/DragAndDropTatooAdmin";
+import hashtag from "../../assets/Tools/Functions/hashTag";
 
 export default function TattooAdmin(props) {
   const navigate = useNavigate();
@@ -175,13 +176,6 @@ export default function TattooAdmin(props) {
     }
   };
 
-  // const hashtag = (value) => {
-  //   let keywords = "#";
-  //   if (value.includes(",")) {
-  //     return (keywords += value.replaceAll(",", `#`));
-  //   } else return (keywords += value.replaceAll(" ", " #"));
-  // };
-
   const handleOnClick = (value) => {
     setSelectedImg(value);
     setShowImg(true);
@@ -318,7 +312,9 @@ export default function TattooAdmin(props) {
                 <div className="description">
                   <p>{flash.description}</p>
                 </div>
-                {/* <p className="hashtag">{hashtag(flash.keywords)}</p> */}
+                {flash.keywords && (
+                  <p className="hashtag">{hashtag(flash.keywords)}</p>
+                )}
               </div>
               {showImg && (
                 <div
