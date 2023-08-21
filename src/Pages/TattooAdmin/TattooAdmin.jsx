@@ -175,12 +175,12 @@ export default function TattooAdmin(props) {
     }
   };
 
-  const hashtag = (value) => {
-    let keywords = "#";
-    if (value.includes(",")) {
-      return (keywords += value.replaceAll(",", `#`));
-    } else return (keywords += value.replaceAll(" ", " #"));
-  };
+  // const hashtag = (value) => {
+  //   let keywords = "#";
+  //   if (value.includes(",")) {
+  //     return (keywords += value.replaceAll(",", `#`));
+  //   } else return (keywords += value.replaceAll(" ", " #"));
+  // };
 
   const handleOnClick = (value) => {
     setSelectedImg(value);
@@ -318,7 +318,7 @@ export default function TattooAdmin(props) {
                 <div className="description">
                   <p>{flash.description}</p>
                 </div>
-                <p className="hashtag">{hashtag(flash.keywords)}</p>
+                {/* <p className="hashtag">{hashtag(flash.keywords)}</p> */}
               </div>
               {showImg && (
                 <div

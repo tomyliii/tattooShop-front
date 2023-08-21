@@ -14,7 +14,7 @@ import Toggle from "../../Components/Toggle/Toggle";
 
 export default function Admin(props) {
   const [admin, setAdmin] = useState({});
-  const [text, setText] = useState("");
+  const [text, setText] = useState({});
   const [isReady, setIsReady] = useState(false);
   const [updateInfos, setUpdateInfos] = useState(false);
   const [firstname, setFirstname] = useState("");
@@ -49,8 +49,9 @@ export default function Admin(props) {
           },
         });
         const responsetext = await axios.get(`${props.server}text`);
-
-        setText(responsetext.data[0].description);
+        setTextDescription(responsetext.data[0].description);
+        setText(responsetext.data[0]);
+        console.log(responsetext);
         setAdmin(responseAdmin.data);
         setIsReady(true);
       })();
@@ -82,6 +83,19 @@ export default function Admin(props) {
           },
         }
       );
+
+      const responsetext = await axios.put(
+        `${props.server}text/edit`,
+        { id: text._id, description: textDescription },
+        {
+          headers: {
+            authorization: "Bearer " + props.adminToken,
+          },
+        }
+      );
+      console.log(text._id, textDescription);
+      console.log(responsetext);
+
       Cookies.set("adminToken", response.data.token, {
         secure: true,
         expires: 7,
@@ -204,7 +218,7 @@ export default function Admin(props) {
                 </div>
                 <div className="text-pres-div">
                   <p>Texte de présentation:</p>
-                  <p className="text-pres">{text}</p>
+                  <p className="text-pres">{text.description}</p>
                 </div>
                 <button
                   onClick={() => {

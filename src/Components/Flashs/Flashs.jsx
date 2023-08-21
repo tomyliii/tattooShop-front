@@ -92,10 +92,10 @@ export default function Flashs(props) {
                 </div>
               ) : (
                 flashsCardList.map((flash, index) => {
-                  let hashtag = "#";
-                  if (flash.keywords.includes(",")) {
-                    hashtag += flash.keywords.replaceAll(",", " #");
-                  } else hashtag += flash.keywords.replaceAll(" ", " #");
+                  // let hashtag = "#";
+                  // if (flash.keywords.includes(",")) {
+                  //   hashtag += flash.keywords.replaceAll(",", " #");
+                  // } else hashtag += flash.keywords.replaceAll(" ", " #");
 
                   return (
                     <Link
@@ -112,7 +112,7 @@ export default function Flashs(props) {
                       <div className="infos-card">
                         <h3>{flash.name}</h3>
                         <p className="description">{flash.description}</p>
-                        <p className="card-hashtag">{hashtag}</p>
+                        {/* <p className="card-hashtag">{hashtag}</p> */}
                       </div>
                     </Link>
                   );

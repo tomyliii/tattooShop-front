@@ -56,12 +56,12 @@ export default function Tattoo(props) {
     }
   }, [id]);
 
-  const hashtag = (value) => {
-    let keywords = "#";
-    if (value.includes(",")) {
-      return (keywords += value.replaceAll(",", `#`));
-    } else return (keywords += value.replaceAll(" ", " #"));
-  };
+  // const hashtag = (value) => {
+  //   let keywords = "#";
+  //   if (value.includes(",")) {
+  //     return (keywords += value.replaceAll(",", `#`));
+  //   } else return (keywords += value.replaceAll(" ", " #"));
+  // };
   const handleOnClick = (value) => {
     setSelectedImg(value);
     setShowImg(true);
@@ -203,7 +203,7 @@ export default function Tattoo(props) {
                 <div className="description">
                   <p>{flash.description}</p>
                 </div>
-                <p className="hashtag">{hashtag(flash.keywords)}</p>
+                {/* <p className="hashtag">{hashtag(flash.keywords)}</p> */}
               </div>
               {showImg && (
                 <div
@@ -353,7 +353,7 @@ export default function Tattoo(props) {
                       <h3>{flashCard.name}</h3>
                       <p className="description">{flashCard.description}</p>
                       <p className="card-hashtag">
-                        {hashtag(flashCard.keywords)}
+                        {/* {hashtag(flashCard.keywords)} */}
                       </p>
                     </div>
                   </Link>
