@@ -14,7 +14,21 @@ export default function Header(props) {
       {!ModalMenu && (
         <>
           <header>
-            <img src={Logo} alt="logo de white fox ink" className="hero-logo" />
+            <div>
+              <h1>
+                White
+                <br />
+                Fox
+                <br />
+                Ink
+              </h1>
+              <img
+                src={Logo}
+                alt="logo de white fox ink"
+                className="hero-logo"
+              />
+            </div>
+
             <button
               className="login-button"
               onClick={() => {

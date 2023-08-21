@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import "./tattoo.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import Login from "../../Components/Modals/Login/Login";
@@ -23,6 +25,7 @@ export default function Tattoo(props) {
   const [flashsCardList, setFlashsCardList] = useState([]);
   const [flash, setFlash] = useState("");
   const [projectModal, setProjectModal] = useState(false);
+  const [ModalMenu, setModalMenu] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   if (projectModal || showImg) {
     document.body.style.overflow = "hidden";
@@ -158,24 +161,30 @@ export default function Tattoo(props) {
 
   return (
     <main className="tattoo-page">
-      <nav>
-        <Link to={"/"}>Home</Link>
+      <div className="top-page-title">
+        <h2>Le Flash </h2>{" "}
+        {!ModalMenu && (
+          <nav className="large-screen-menu">
+            <Link to={"/"}>Home</Link>
 
-        <button
-          onClick={() => {
-            setProjectModal(true);
-          }}
-        >
-          Proposer un Projet
-        </button>
-        <button
-          onClick={() => {
-            setLoginModal(true);
-          }}
-        >
-          {props.adminToken ? "Session admin" : " Se connecter"}
-        </button>
-      </nav>
+            <button
+              onClick={() => {
+                setProjectModal(true);
+              }}
+            >
+              Proposer un Projet
+            </button>
+            <button
+              onClick={() => {
+                setLoginModal(true);
+              }}
+            >
+              {props.adminToken ? "Session admin" : " Se connecter"}
+            </button>
+          </nav>
+        )}
+      </div>
+
       {!isReady ? (
         <div>
           <p>Loading, please wait...</p>
@@ -342,7 +351,7 @@ export default function Tattoo(props) {
                     </div>
                     <div className="infos-card">
                       <h3>{flashCard.name}</h3>
-                      <p>{flashCard.description}</p>
+                      <p className="description">{flashCard.description}</p>
                       <p className="card-hashtag">
                         {hashtag(flashCard.keywords)}
                       </p>
@@ -364,6 +373,48 @@ export default function Tattoo(props) {
       )}
       {projectModal && (
         <Project server={props.server} setProjectModal={setProjectModal} />
+      )}
+      <button
+        className="small-screen-btn-menu"
+        onClick={() => {
+          setModalMenu(!ModalMenu);
+        }}
+      >
+        {!ModalMenu ? (
+          <FontAwesomeIcon icon={faBars} />
+        ) : (
+          <FontAwesomeIcon icon={faXmark} />
+        )}
+      </button>
+      {ModalMenu && (
+        <nav className="small-screen-menu">
+          <Link
+            to={"/"}
+            onClick={() => {
+              setModalMenu(!ModalMenu);
+            }}
+          >
+            Home
+          </Link>
+
+          <button
+            onClick={() => {
+              setProjectModal(true);
+              setModalMenu(!ModalMenu);
+            }}
+          >
+            Proposer un Projet
+          </button>
+          <button
+            className="login-btn-small-screen"
+            onClick={() => {
+              setLoginModal(true);
+              setModalMenu(!ModalMenu);
+            }}
+          >
+            {props.adminToken ? "Session admin" : " Se connecter"}
+          </button>
+        </nav>
       )}
     </main>
   );
