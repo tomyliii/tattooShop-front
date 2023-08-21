@@ -51,7 +51,7 @@ export default function Admin(props) {
         const responsetext = await axios.get(`${props.server}text`);
         setTextDescription(responsetext.data[0].description);
         setText(responsetext.data[0]);
-        console.log(responsetext);
+
         setAdmin(responseAdmin.data);
         setIsReady(true);
       })();
@@ -310,7 +310,7 @@ export default function Admin(props) {
                     onChange={(event) => {
                       handleOnChange(event.target.value, setTextDescription);
                     }}
-                    placeholder={text}
+                    placeholder={text.description}
                   ></textarea>
                   <DragAndDrop
                     setErrorMessage={setErrorMessageInfo}
