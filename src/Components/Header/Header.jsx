@@ -18,9 +18,7 @@ export default function Header(props) {
               <h1>
                 White
                 <br />
-                Fox
-                <br />
-                Ink
+                Fox Ink
               </h1>
               <img
                 src={Logo}

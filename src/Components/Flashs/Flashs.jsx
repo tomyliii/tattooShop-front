@@ -99,7 +99,7 @@ export default function Flashs(props) {
                       key={index + flash._id}
                       className="card"
                     >
-                      <div>
+                      <div className="image">
                         <img
                           src={flash.images[0].secure_url}
                           alt={`image de ${flash.name}`}

@@ -35,10 +35,14 @@
 #flashs-section .card > div {
   flex: 1;
 }
+
+#flashs-section .card .image-section {
+  display: flex;
+}
 #flashs-section .card img {
   width: 100%;
-
-  display: flex;
+  height: 100%;
+  object-position: center;
   object-fit: cover;
 }
 .infos-card {

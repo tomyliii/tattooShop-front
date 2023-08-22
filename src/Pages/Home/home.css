@@ -1,5 +1,6 @@
 main {
   padding: 0 0px 50px;
+  overflow: hidden;
 }
 .wrapper {
   width: 1138px;
@@ -32,13 +33,26 @@ main {
   left: 50px;
   background-color: rgba(225, 18, 18, 0.275);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 #about-me-section span {
-  color: rgb(225, 18, 18);
+  position: absolute;
+  color: rgba(255, 255, 255, 0.133);
+  font-size: 100px;
 }
 
+.end-text-description {
+  bottom: -52px;
+  right: 0;
+}
+.start-text-description {
+  top: -10px;
+  left: 0;
+}
+.img-aboute-me-little-creen {
+  display: none;
+}
 @media screen and (max-width: 992px) {
 }
 
@@ -76,5 +90,32 @@ main {
   }
   #about-me-section span {
     font-size: 20px;
+  }
+  #about-me-section > div {
+    position: relative;
+    overflow: inherit;
+  }
+  .img-aboute-me {
+    visibility: hidden;
+  }
+  #about-me-section .img-aboute-me-little-creen {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 110vw;
+  }
+  #about-me-section span {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.152);
+    font-size: 100px;
+  }
+
+  #about-me-section .end-text-description {
+    bottom: -52px;
+    right: 0;
+  }
+  #about-me-section .start-text-description {
+    top: -10px;
+    left: 0;
   }
 }

@@ -11,10 +11,10 @@ import Footer from "./Components/Footer/Footer";
 
 function App() {
   const [adminToken, setAdminToken] = useState(Cookies.get("adminToken") || "");
-  // const server = "https://site--back-tattoo--tzmxcvqjqbzq.code.run/";
-  // const server = "http://127.0.0.1:3000/";
+
+  const server = "http://127.0.0.1:3000/";
   //tattooShopServer
-  const server = "https://site--tattooshop-back--p8gvcnpxkk2p.code.run/";
+  // const server = "https://site--tattooshop-back--p8gvcnpxkk2p.code.run/";
   return (
     <>
       <Router>

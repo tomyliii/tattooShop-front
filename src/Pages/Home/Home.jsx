@@ -51,9 +51,16 @@ export default function Home(props) {
                 alt="image d'un tatoueur tatouant une personne"
                 className="img-aboute-me"
               />
+              <img
+                src={Img1}
+                alt="image d'un tatoueur tatouant une personne"
+                className="img-aboute-me-little-creen"
+              />
               <p className="css-fix ">
-                <span>❝ </span>
-                {text} <span> ❞</span>
+                <span className="start-text-description">❝ </span>
+                <br />
+                {text} <br />
+                <span className="end-text-description"> ❞</span>
               </p>
             </div>
           </section>

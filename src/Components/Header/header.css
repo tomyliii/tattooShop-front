@@ -21,11 +21,11 @@ header > div {
   flex-direction: row-reverse;
 }
 header > div > H1 {
-  font-size: 60px;
+  font-size: 70px;
   text-shadow: 15px 10px 0px rgba(213, 16, 16, 0.603);
 }
 .hero-logo {
-  width: 200px;
+  width: 150px;
   mix-blend-mode: lighten;
 }
 
@@ -151,7 +151,7 @@ nav button:hover {
     display: none;
   }
   .hero-logo {
-    width: 100px;
+    width: 80px;
     mix-blend-mode: lighten;
   }
   header {

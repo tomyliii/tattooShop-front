@@ -2,6 +2,24 @@ body {
   overflow-x: hidden;
 }
 
+.admin-nav {
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid white;
+}
+.admin-nav a {
+  flex: 1;
+}
+.toggle-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .admin-section {
   padding-top: 50px;
   overflow-y: hidden;
@@ -151,4 +169,83 @@ textarea {
 .add-flash h3 {
   font-style: normal;
   font-size: 20px;
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  .toggle-nav {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 10px;
+  }
+  .admin-section {
+    padding-top: 20px;
+  }
+
+  .admin-section > div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .admin-section > div > section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .admin-section > .wrapper > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .admin-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .admin-infos > div {
+    width: 100%;
+  }
+
+  .admin-infos .text-pres-div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .admin-infos .text-pres-div > p:first-of-type {
+    min-width: max-content;
+  }
+  .text-pres {
+    width: 90%;
+    white-space: pre-wrap;
+    text-align: justify;
+    align-self: center;
+  }
+
+  .admin-infos button {
+    width: 150px;
+    color: black;
+    border: none;
+    transition: all 0.1s ease-in;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .admin-infos button:active {
+    background-color: red;
+    color: white;
+    scale: 1.1;
+  }
 }

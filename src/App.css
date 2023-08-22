@@ -190,6 +190,10 @@ textarea {
   a {
     font-size: 14px;
   }
+
+  section {
+    margin-top: 20px;
+  }
   [class$="modal"] > div {
     width: 90%;
     gap: 30px;
