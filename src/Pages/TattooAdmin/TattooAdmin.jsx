@@ -42,7 +42,7 @@ export default function TattooAdmin(props) {
     document.body.style.overflow = "";
   }
   const { id } = useParams();
-  const maxFilesAuthorized = 3;
+  const maxFilesAuthorized = 1;
   useEffect(() => {
     try {
       (async () => {
@@ -59,158 +59,158 @@ export default function TattooAdmin(props) {
     }
   }, []);
 
-  const pictures = (value) => {
-    if (value.images.length === 1) {
-      return (
-        <div
-          className={`one-picture  ${flash.disable === false && "archived"}`}
-        >
-          <button
-            type="button"
-            onClick={(event) => handleOnClickSupp(event, value.images[0])}
-          >
-            <FontAwesomeIcon icon={faXmark} />
-          </button>
-          <img
-            onClick={(event) => {
-              handleOnClick(value.images[0]);
-            }}
-            src={value.images[0].secure_url}
-            alt={`image de ${value.name}`}
-          />
-        </div>
-      );
-    } else if (value.images.length === 2) {
-      return (
-        <div
-          className={`two-pictures  ${flash.disable === false && "archived"}`}
-        >
-          <div>
-            <button
-              type="button"
-              onClick={(event) => handleOnClickSupp(event, value.images[0])}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              onClick={(event) => {
-                handleOnClick(value.images[0]);
-              }}
-              src={value.images[0].secure_url}
-              alt={`image de ${value.name}`}
-            />
-          </div>
-          <div>
-            <button
-              type="button"
-              onClick={(event) => handleOnClickSupp(event, value.images[1])}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              onClick={(event) => {
-                handleOnClick(value.images[1]);
-              }}
-              src={value.images[1].secure_url}
-              alt={`image de ${value.name}`}
-            />
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div
-          className={`three-pictures-admin  ${
-            flash.disable === false && "archived"
-          }`}
-        >
-          <div>
-            <button
-              type="button"
-              onClick={(event) => handleOnClickSupp(event, value.images[0])}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              onClick={(event) => {
-                handleOnClick(value.images[0]);
-              }}
-              src={value.images[0].secure_url}
-              alt={`image de ${value.name}`}
-            />
-          </div>
-          <div className="three-pictures-seconde-part">
-            <div>
-              <button
-                type="button"
-                onClick={(event) => handleOnClickSupp(event, value.images[1])}
-              >
-                <FontAwesomeIcon icon={faXmark} />
-              </button>
-              <img
-                onClick={(event) => {
-                  handleOnClick(value.images[1]);
-                }}
-                src={value.images[1].secure_url}
-                alt={`image de ${value.name}`}
-              />
-            </div>
-            <div>
-              <button
-                type="button"
-                onClick={(event) => handleOnClickSupp(event, value.images[2])}
-              >
-                <FontAwesomeIcon icon={faXmark} />
-              </button>
-              <img
-                onClick={(event) => {
-                  handleOnClick(value.images[2]);
-                }}
-                src={value.images[2].secure_url}
-                alt={`image de ${value.name}`}
-              />
-            </div>
-          </div>
-        </div>
-      );
-    }
-  };
+  // const pictures = (value) => {
+  //   if (value.images.length === 1) {
+  //     return (
+  //       <div
+  //         className={`one-picture  ${flash.disable === false && "archived"}`}
+  //       >
+  //         <button
+  //           type="button"
+  //           onClick={(event) => handleOnClickSupp(event, value.images[0])}
+  //         >
+  //           <FontAwesomeIcon icon={faXmark} />
+  //         </button>
+  //         <img
+  //           onClick={(event) => {
+  //             handleOnClick(value.images[0]);
+  //           }}
+  //           src={value.images[0].secure_url}
+  //           alt={`image de ${value.name}`}
+  //         />
+  //       </div>
+  //     );
+  //   } else if (value.images.length === 2) {
+  //     return (
+  //       <div
+  //         className={`two-pictures  ${flash.disable === false && "archived"}`}
+  //       >
+  //         <div>
+  //           <button
+  //             type="button"
+  //             onClick={(event) => handleOnClickSupp(event, value.images[0])}
+  //           >
+  //             <FontAwesomeIcon icon={faXmark} />
+  //           </button>
+  //           <img
+  //             onClick={(event) => {
+  //               handleOnClick(value.images[0]);
+  //             }}
+  //             src={value.images[0].secure_url}
+  //             alt={`image de ${value.name}`}
+  //           />
+  //         </div>
+  //         <div>
+  //           <button
+  //             type="button"
+  //             onClick={(event) => handleOnClickSupp(event, value.images[1])}
+  //           >
+  //             <FontAwesomeIcon icon={faXmark} />
+  //           </button>
+  //           <img
+  //             onClick={(event) => {
+  //               handleOnClick(value.images[1]);
+  //             }}
+  //             src={value.images[1].secure_url}
+  //             alt={`image de ${value.name}`}
+  //           />
+  //         </div>
+  //       </div>
+  //     );
+  //   } else {
+  //     return (
+  //       <div
+  //         className={`three-pictures-admin  ${
+  //           flash.disable === false && "archived"
+  //         }`}
+  //       >
+  //         <div>
+  //           <button
+  //             type="button"
+  //             onClick={(event) => handleOnClickSupp(event, value.images[0])}
+  //           >
+  //             <FontAwesomeIcon icon={faXmark} />
+  //           </button>
+  //           <img
+  //             onClick={(event) => {
+  //               handleOnClick(value.images[0]);
+  //             }}
+  //             src={value.images[0].secure_url}
+  //             alt={`image de ${value.name}`}
+  //           />
+  //         </div>
+  //         <div className="three-pictures-seconde-part">
+  //           <div>
+  //             <button
+  //               type="button"
+  //               onClick={(event) => handleOnClickSupp(event, value.images[1])}
+  //             >
+  //               <FontAwesomeIcon icon={faXmark} />
+  //             </button>
+  //             <img
+  //               onClick={(event) => {
+  //                 handleOnClick(value.images[1]);
+  //               }}
+  //               src={value.images[1].secure_url}
+  //               alt={`image de ${value.name}`}
+  //             />
+  //           </div>
+  //           <div>
+  //             <button
+  //               type="button"
+  //               onClick={(event) => handleOnClickSupp(event, value.images[2])}
+  //             >
+  //               <FontAwesomeIcon icon={faXmark} />
+  //             </button>
+  //             <img
+  //               onClick={(event) => {
+  //                 handleOnClick(value.images[2]);
+  //               }}
+  //               src={value.images[2].secure_url}
+  //               alt={`image de ${value.name}`}
+  //             />
+  //           </div>
+  //         </div>
+  //       </div>
+  //     );
+  //   }
+  // };
 
   const handleOnClick = (value) => {
     setSelectedImg(value);
     setShowImg(true);
   };
 
-  const handleOnClickSupp = async (event, value) => {
-    event.preventDefault();
+  // const handleOnClickSupp = async (event, value) => {
+  //   event.preventDefault();
 
-    try {
-      const response = await axios.put(
-        `${props.server}tatoo/deletepicture/${id}`,
-        {
-          image: value,
-        },
-        {
-          headers: {
-            Authorization: "Bearer " + props.adminToken,
-          },
-        }
-      );
+  //   try {
+  //     const response = await axios.put(
+  //       `${props.server}tatoo/deletepicture/${id}`,
+  //       {
+  //         image: value,
+  //       },
+  //       {
+  //         headers: {
+  //           Authorization: "Bearer " + props.adminToken,
+  //         },
+  //       }
+  //     );
 
-      setFlash(response.data);
-      setFlashPicutres([...response.data.images]);
-    } catch (error) {
-      if (error.response.data.message) {
-        setErrorMessage(error.response.data.message);
-      } else {
-        setErrorMessage(error.message);
-      }
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 3000);
-      console.log(error);
-    }
-  };
+  //     setFlash(response.data);
+  //     setFlashPicutres([...response.data.images]);
+  //   } catch (error) {
+  //     if (error.response.data.message) {
+  //       setErrorMessage(error.response.data.message);
+  //     } else {
+  //       setErrorMessage(error.message);
+  //     }
+  //     setTimeout(() => {
+  //       setErrorMessage("");
+  //     }, 3000);
+  //     console.log(error);
+  //   }
+  // };
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
@@ -302,7 +302,19 @@ export default function TattooAdmin(props) {
             </div>
           ) : (
             <div className="flash-bloc">
-              {pictures(flash)}
+              <div
+                className={`one-picture  ${
+                  flash.disable === false && "archived"
+                }`}
+              >
+                <img
+                  onClick={(event) => {
+                    handleOnClick(flash.images[0]);
+                  }}
+                  src={flash.images[0].secure_url}
+                  alt={`image de ${flash.name}`}
+                />
+              </div>
               <div
                 className={`info-flash ${
                   flash.disable === false && "archived"

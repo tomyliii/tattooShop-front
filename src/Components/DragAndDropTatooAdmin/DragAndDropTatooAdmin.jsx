@@ -57,9 +57,7 @@ export default function DragAndDropTatooAdmin(props) {
   };
 
   const maxFilesAuthorizedToDropp =
-    props.maxFilesAuthorized -
-    props.flashPictures.length -
-    arrayOfImages.length;
+    props.maxFilesAuthorized - arrayOfImages.length;
 
   const {
     acceptedFiles,

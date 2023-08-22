@@ -44,9 +44,7 @@ export default function DragAndDrop(props) {
       const arrayOfImagesCopy = [...arrayOfImages];
       arrayOfImagesCopy.splice(arrayOfImages.indexOf(value.name), 1);
       setArrayOfImages([...arrayOfImagesCopy]);
-      props.setFlashPictures([
-        ...arrayOfImagesCopy.splice(arrayOfImages.indexOf(value.name), 1),
-      ]);
+      props.setFlashPictures([...arrayOfImagesCopy]);
     } catch (error) {
       console.log(error);
       props.setErrorMessage("Une erreur est survenue.");

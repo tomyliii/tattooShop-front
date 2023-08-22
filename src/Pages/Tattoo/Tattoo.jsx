@@ -48,6 +48,7 @@ export default function Tattoo(props) {
           const random = Math.floor(Math.random() * 20);
           flashsArrayToCard.push(responsetoCard.data.tatoos[random]);
         }
+        console.log(flashsArrayToCard, response);
         setFlashsCardList([...flashsArrayToCard]);
         setFlash(response.data);
         setIsReady(true);
@@ -63,72 +64,71 @@ export default function Tattoo(props) {
     setShowImg(true);
   };
 
-  const pictures = (value) => {
-    if (value.images.length === 1) {
-      return (
-        <div className="one-picture">
-          <img
-            onClick={(event) => {
-              handleOnClick(value.images[0]);
-            }}
-            src={value.images[0].secure_url}
-            alt={`image de ${value.name}`}
-          />
-        </div>
-      );
-    } else if (value.images.length === 2) {
-      return (
-        <div className="two-pictures">
-          <img
-            onClick={(event) => {
-              handleOnClick(value.images[0]);
-            }}
-            src={value.images[0].secure_url}
-            alt={`image de ${value.name}`}
-          />
-          <img
-            onClick={(event) => {
-              handleOnClick(value.images[1]);
-            }}
-            src={value.images[1].secure_url}
-            alt={`image de ${value.name}`}
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div className="three-pictures">
-          <img
-            onClick={(event) => {
-              handleOnClick(value.images[0]);
-            }}
-            src={value.images[0].secure_url}
-            alt={`image de ${value.name}`}
-          />
-          <div className="three-pictures-seconde-part">
-            <img
-              onClick={(event) => {
-                handleOnClick(value.images[1]);
-              }}
-              src={value.images[1].secure_url}
-              alt={`image de ${value.name}`}
-            />
-            <img
-              onClick={(event) => {
-                handleOnClick(value.images[2]);
-              }}
-              src={value.images[2].secure_url}
-              alt={`image de ${value.name}`}
-            />
-          </div>
-        </div>
-      );
-    }
-  };
+  // const pictures = (value) => {
+  //   if (value.images.length === 1) {
+  //     return (
+  //       <div className="one-picture">
+  //         <img
+  //           onClick={(event) => {
+  //             handleOnClick(value.images[0]);
+  //           }}
+  //           src={value.images[0].secure_url}
+  //           alt={`image de ${value.name}`}
+  //         />
+  //       </div>
+  //     );
+  //   } else if (value.images.length === 2) {
+  //     return (
+  //       <div className="two-pictures">
+  //         <img
+  //           onClick={(event) => {
+  //             handleOnClick(value.images[0]);
+  //           }}
+  //           src={value.images[0].secure_url}
+  //           alt={`image de ${value.name}`}
+  //         />
+  //         <img
+  //           onClick={(event) => {
+  //             handleOnClick(value.images[1]);
+  //           }}
+  //           src={value.images[1].secure_url}
+  //           alt={`image de ${value.name}`}
+  //         />
+  //       </div>
+  //     );
+  //   } else {
+  //     return (
+  //       <div className="three-pictures">
+  //         <img
+  //           onClick={(event) => {
+  //             handleOnClick(value.images[0]);
+  //           }}
+  //           src={value.images[0].secure_url}
+  //           alt={`image de ${value.name}`}
+  //         />
+  //         <div className="three-pictures-seconde-part">
+  //           <img
+  //             onClick={(event) => {
+  //               handleOnClick(value.images[1]);
+  //             }}
+  //             src={value.images[1].secure_url}
+  //             alt={`image de ${value.name}`}
+  //           />
+  //           <img
+  //             onClick={(event) => {
+  //               handleOnClick(value.images[2]);
+  //             }}
+  //             src={value.images[2].secure_url}
+  //             alt={`image de ${value.name}`}
+  //           />
+  //         </div>
+  //       </div>
+  //     );
+  //   }
+  // };
 
   const handleOnSubmit = async (event) => {
     try {
-      console.log(flash._id);
       event.preventDefault();
       if (firstname && lastname && mail && number && conditions) {
         const response = await axios.post(`${props.server}book/tatoo`, {
@@ -193,7 +193,15 @@ export default function Tattoo(props) {
             </div>
           ) : (
             <div className="flash-bloc">
-              {pictures(flash)}
+              <div className="one-picture">
+                <img
+                  onClick={(event) => {
+                    handleOnClick(flash.images[0]);
+                  }}
+                  src={flash.images[0].secure_url}
+                  alt={`image de ${flash.name}`}
+                />
+              </div>
               <div className="info-flash">
                 <h3>{flash.name}</h3>
                 <div className="description">

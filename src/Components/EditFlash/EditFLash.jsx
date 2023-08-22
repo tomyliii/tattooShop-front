@@ -15,7 +15,7 @@ export default function EditFlash({
   errorMessage,
   setErrorMessage,
 }) {
-  const maxFilesAuthorized = 3;
+  const maxFilesAuthorized = 1;
   return (
     <div className="create-flash">
       <h3>Ajouter un flash</h3>
