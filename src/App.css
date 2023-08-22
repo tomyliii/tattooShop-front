@@ -36,10 +36,16 @@ h1 {
   font-weight: bold;
 }
 h2 {
+  /* width: max-content;
+  padding: 10px 60px 30px 10px;
+  text-shadow: 10px 10px black; */
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   font-size: 30px;
+  /* 
   margin-bottom: 30px;
+  background-color: rgb(143, 36, 36);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0)); */
 }
 h3 {
   font-family: "Roboto", sans-serif;
