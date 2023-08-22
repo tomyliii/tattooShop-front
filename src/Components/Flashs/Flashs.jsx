@@ -84,94 +84,89 @@ export default function Flashs(props) {
     <>
       <section id="flashs-section">
         <h2>Les Flashs</h2>
-        {flashsListe.length !== 0 ? (
-          <>
-            <div className="card-section">
-              {errorMessage ? (
-                <div>
-                  <p>{errorMessage}</p>
-                </div>
-              ) : (
-                flashsCardList.map((flash, index) => {
-                  return (
-                    <Link
-                      to={`/tattoo/${flash._id}`}
-                      key={index + flash._id}
-                      className="card"
-                    >
-                      <div className="image">
-                        <img
-                          src={flash.images[0].secure_url}
-                          alt={`image de ${flash.name}`}
-                        />
-                      </div>
-                      <div className="infos-card">
-                        <h3>{flash.name}</h3>
-                        <p className="description">{flash.description}</p>
-                        {flash.keywords && (
-                          <p className="card-hashtag">
-                            {hashtag(flash.keywords)}
-                          </p>
-                        )}
-                      </div>
-                    </Link>
-                  );
-                })
-              )}
-            </div>
-            <form
-              onSubmit={(event) => {
-                handleOnSubmit(event);
+
+        <>
+          <div className="card-section">
+            {errorMessage ? (
+              <div>
+                <p>{errorMessage}</p>
+              </div>
+            ) : (
+              flashsCardList.map((flash, index) => {
+                return (
+                  <Link
+                    to={`/tattoo/${flash._id}`}
+                    key={index + flash._id}
+                    className="card"
+                  >
+                    <div className="image">
+                      <img
+                        src={flash.images[0].secure_url}
+                        alt={`image de ${flash.name}`}
+                      />
+                    </div>
+                    <div className="infos-card">
+                      <h3>{flash.name}</h3>
+                      <p className="description">{flash.description}</p>
+                      {flash.keywords && (
+                        <p className="card-hashtag">
+                          {hashtag(flash.keywords)}
+                        </p>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </div>
+          <form
+            onSubmit={(event) => {
+              handleOnSubmit(event);
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Chercher un tatouage"
+              value={search}
+              onChange={(event) => {
+                handleOnChange(event.target.value, setSearch);
               }}
-            >
-              <input
-                type="text"
-                placeholder="Chercher un tatouage"
-                value={search}
-                onChange={(event) => {
-                  handleOnChange(event.target.value, setSearch);
-                }}
-              />
-              <input type="submit" value="Valider" />
-            </form>
-            <div className="box-section">
-              {errorMessage ? (
-                <div>
-                  <p>{errorMessage}</p>
-                </div>
-              ) : (
-                flashsListe.map((flash) => {
-                  return (
-                    <Link
-                      to={`/tattoo/${flash._id}`}
-                      key={flash._id}
-                      className="box"
-                    >
-                      <div>
-                        <img
-                          src={flash.images[0].secure_url}
-                          alt={`image de ${flash.name}`}
-                        />
-                      </div>
-                      <div className="box-title">
-                        <p>{flash.name}</p>
-                      </div>
-                    </Link>
-                  );
-                })
-              )}
-            </div>
-            <Pagination
-              pages={pages}
-              selectedPage={page}
-              setSelectedPage={setPage}
             />
-          </>
-        ) : (
-          <dir>
-            <p>Aucun flash disponible</p>
-          </dir>
-        )}
+            <input type="submit" value="Valider" />
+          </form>
+          <div className="box-section">
+            {errorMessage ? (
+              <div>
+                <p>{errorMessage}</p>
+              </div>
+            ) : (
+              flashsListe.map((flash) => {
+                return (
+                  <Link
+                    to={`/tattoo/${flash._id}`}
+                    key={flash._id}
+                    className="box"
+                  >
+                    <div>
+                      <img
+                        src={flash.images[0].secure_url}
+                        alt={`image de ${flash.name}`}
+                      />
+                    </div>
+                    <div className="box-title">
+                      <p>{flash.name}</p>
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </div>
+          <Pagination
+            pages={pages}
+            selectedPage={page}
+            setSelectedPage={setPage}
+          />
+        </>
       </section>
     </>
   );
