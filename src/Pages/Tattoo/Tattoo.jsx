@@ -203,8 +203,8 @@ export default function Tattoo(props) {
                 />
               </div>
               <div className="info-flash">
-                <h3>{flash.name}</h3>
                 <div className="description">
+                  <h3>{flash.name}</h3>
                   <p>{flash.description}</p>
                 </div>
                 {flash.keywords && (

@@ -67,8 +67,6 @@
 .flash-bloc .one-picture {
   display: flex;
   height: 100%;
-  justify-content: center;
-  align-items: center;
 }
 .flash-bloc img {
   cursor: pointer;
@@ -102,7 +100,7 @@
   top: 0;
   left: 0;
   position: fixed;
-  width: 110vw;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.582);
   display: flex;
@@ -112,13 +110,15 @@
 }
 
 .tattoo-page .show-image > div {
-  display: flex;
   width: 80%;
   height: 80%;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 .tattoo-page .show-image > div > img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
 .tattoo-page .book-form {
@@ -296,38 +296,17 @@ textarea {
 
   .tattoo-page .flash-bloc {
     flex-direction: column;
+    height: 400px;
   }
   .tattoo-page > section > div > div {
-    flex: inherit;
   }
   .flash-bloc .info-flash {
     gap: 20px;
     padding: 20px;
   }
 
-  .tattoo-page .flash-bloc .two-pictures {
-    overflow: hidden;
-    flex-direction: row;
-    height: 100%;
-  }
-
   .flash-bloc .one-picture {
-    height: calc(100% / 2);
-  }
-
-  .flash-bloc .two-pictures img {
-    width: calc(100% / 2);
-    height: 100%;
-    object-fit: cover;
-  }
-  .flash-bloc .three-pictures {
-    overflow: hidden;
-  }
-  .flash-bloc .three-pictures > img {
-    width: 100%;
-  }
-  .flash-bloc .info-flash .description {
-    height: 50%;
+    height: calc(100% / 1.8);
   }
 
   .info-flash .hashtag {
