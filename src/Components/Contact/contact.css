@@ -1,3 +1,7 @@
+[id="contact-section"] h2 {
+  margin-bottom: 30px;
+}
+
 [id="contact-section"] > div {
   display: flex;
   align-items: center;
@@ -24,9 +28,9 @@ textarea {
   width: 80%;
   padding: 10px 5px;
   border: none;
-  color: white;
-  border-bottom: white solid 1px;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  border-bottom: rgb(0, 0, 0) solid 1px;
+  background-color: rgba(255, 255, 255, 0.17);
   border-radius: 5px 5px 0 0;
   padding-left: 10px;
   transition: all 0.3s ease-in;
@@ -35,28 +39,37 @@ textarea {
 
 [id="contact-section"] form > input:focus,
 [id="contact-section"] form > textarea:focus {
-  background-color: rgba(255, 0, 0, 0.451);
+  background-color: rgba(105, 105, 105, 0.095);
   outline: 0;
 }
 
 [id="contact-section"] form > input::placeholder,
 [id="contact-section"] form > textarea::placeholder {
-  color: white;
+  color: rgb(138, 138, 138);
   font-family: sans-serif;
 }
 
 [id="contact-section"] form > input[type="submit"] {
   width: 30%;
-  color: black;
+  color: white;
   border: none;
   transition: all 0.3s ease-in;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
   border-radius: 5px;
 }
 
 [id="contact-section"] form > input[type="submit"]:hover {
   background-color: red;
   color: white;
+}
+#contact-section .checkbox P {
+  color: black;
+}
+.message-validation-contac {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 @media screen and (max-width: 992px) {
 }

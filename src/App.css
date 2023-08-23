@@ -1,6 +1,7 @@
 body {
   background-color: Black;
   width: 100%;
+  background-color: white;
 }
 
 *::-webkit-scrollbar {
@@ -8,14 +9,14 @@ body {
 }
 
 *::-webkit-scrollbar-track {
-  background: rgb(71, 71, 71);
+  background: rgb(255, 255, 255);
   border-radius: 20px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: rgb(162, 7, 7);
+  background-color: rgb(255, 0, 0);
   border-radius: 20px;
-  border: 3px solid rgb(71, 71, 71);
+  border: 3px solid rgb(255, 255, 255);
 }
 p,
 h1,
@@ -42,6 +43,7 @@ h2 {
   font-family: "Bebas Neue", sans-serif;
   font-weight: bold;
   font-size: 30px;
+  color: red;
   /* 
   margin-bottom: 30px;
   background-color: rgb(143, 36, 36);
@@ -132,9 +134,9 @@ textarea {
   width: 80%;
   padding: 10px 5px;
   border: none;
-  color: white;
-  border-bottom: white solid 1px;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  border-bottom: rgb(0, 0, 0) solid 1px;
+  background-color: rgba(255, 255, 255, 0.17);
   border-radius: 5px 5px 0 0;
   padding-left: 10px;
   transition: all 0.3s ease-in;
@@ -143,7 +145,7 @@ textarea {
 
 [class$="modal"] form > input:focus,
 [class$="modal"] form > textarea:focus {
-  background-color: rgba(225, 18, 18, 0.275);
+  background-color: rgba(255, 255, 255, 0.803);
   outline: 0;
 }
 

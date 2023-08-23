@@ -22,7 +22,7 @@ main {
   translate: -50px;
   width: 60%;
   transform: perspective(400px) rotateY(-10deg);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.352);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 .css-fix {
   position: relative;
@@ -31,14 +31,14 @@ main {
   translate: 50px;
   width: 400px;
   left: 50px;
-  background-color: rgba(225, 18, 18, 0.275);
+  background-color: rgba(0, 0, 0, 0.408);
   padding: 20px;
   border-radius: 10px;
 }
 
 #about-me-section span {
   position: absolute;
-  color: rgba(255, 255, 255, 0.133);
+  color: rgba(245, 3, 3, 0.186);
   font-size: 100px;
 }
 
@@ -78,19 +78,16 @@ main {
     translate: 0px;
     width: 100%;
     transform: perspective(000px) rotateY(00deg);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.352);
   }
   .css-fix {
     translate: 0px;
     width: 90%;
     left: 0;
-    background-color: rgba(225, 18, 18, 0.275);
+    margin-top: 40px;
     padding: 20px;
     border-radius: 5px;
   }
-  #about-me-section span {
-    font-size: 20px;
-  }
+
   #about-me-section > div {
     position: relative;
     overflow: inherit;
@@ -105,8 +102,6 @@ main {
     width: 110vw;
   }
   #about-me-section span {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.152);
     font-size: 100px;
   }
 

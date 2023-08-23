@@ -7,8 +7,8 @@ footer {
   justify-content: center;
   gap: 50px;
   padding: 50px;
-  background-color: rgba(225, 18, 18, 0.275);
-  border-top: white dashed 15px;
+  background-color: black;
+
   margin-top: 50px;
 }
 footer > div {
@@ -69,7 +69,7 @@ footer .links img {
     justify-content: center;
     gap: 50px;
     padding: 50px;
-    background-color: rgba(225, 18, 18, 0.275);
+
     border-top: white dashed 5px;
   }
 

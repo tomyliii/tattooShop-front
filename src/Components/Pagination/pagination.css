@@ -22,7 +22,6 @@
 
 .pagination-section button:hover {
   background-color: red;
-
   color: white;
 }
 .pagination-section button:active {
@@ -30,8 +29,8 @@
 }
 
 .pagination-section .selected {
-  background-color: red;
-  color: white;
+  background-color: rgb(0, 0, 0);
+  color: red;
   font-weight: bold;
 }
 @media screen and (max-width: 992px) {
@@ -40,5 +39,10 @@
 @media screen and (max-width: 600px) {
   .pagination-section {
     padding-top: 0px;
+  }
+  .pagination-section button {
+    background-color: white;
+
+    border: 1px solid black;
   }
 }

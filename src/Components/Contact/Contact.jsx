@@ -61,7 +61,7 @@ export default function Contact(props) {
       <h2>Contact</h2>
       <div>
         {ValidationMessage ? (
-          <div>
+          <div className="message-validation-contac">
             <p>{ValidationMessage}</p>
           </div>
         ) : (

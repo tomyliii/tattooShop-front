@@ -158,7 +158,7 @@ export default function Tattoo(props) {
   return (
     <main className="tattoo-page">
       <div className="top-page-title">
-        <h2>Le Flash </h2>{" "}
+        <h2>Le Flash </h2>
         {!ModalMenu && (
           <nav className="large-screen-menu">
             <Link to={"/"}>Home</Link>

@@ -43,11 +43,11 @@
   width: 100%;
   gap: 20px;
 }
+*/
 
 #flashs-section .box-section > .archived {
   background-color: orange;
-}
-
+} /* 
 .box-section > .box {
   background-color: rgba(227, 192, 192, 0.132);
   display: flex;

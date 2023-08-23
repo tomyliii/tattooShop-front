@@ -1,7 +1,9 @@
 body {
   overflow-x: hidden;
 }
-
+.admin-section p {
+  color: black;
+}
 .admin-nav {
   width: 100vw;
   padding-top: 10px;
@@ -9,6 +11,9 @@ body {
   display: flex;
   align-items: center;
   border-bottom: 2px solid white;
+}
+.admin-nav p {
+  color: red;
 }
 .admin-nav a {
   flex: 1;
@@ -76,10 +81,10 @@ body {
 
 .admin-infos button {
   width: 150px;
-  color: black;
+  color: white;
   border: none;
   transition: all 0.3s ease-in;
-  background-color: rgb(255, 255, 255);
+  background-color: black;
   border-radius: 5px;
   padding: 10px;
 }
@@ -92,7 +97,7 @@ body {
 .admin-section .infos-update,
 .admin-section .add-flash form {
   background-color: rgba(255, 255, 255, 0.118);
-  border: white 1px solid;
+  border: rgb(0, 0, 0) 1px solid;
   border-radius: 5px;
   padding: 20px;
   margin: auto;
@@ -112,9 +117,9 @@ textarea {
   width: 80%;
   padding: 10px 5px;
   border: none;
-  color: white;
-  border-bottom: white solid 1px;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  border-bottom: rgb(0, 0, 0) solid 1px;
+  background-color: rgba(255, 255, 255, 0.17);
   border-radius: 5px 5px 0 0;
   padding-left: 10px;
   transition: all 0.3s ease-in;
@@ -125,7 +130,7 @@ textarea {
 .admin-section .infos-update > textarea:focus,
 .admin-section .add-flash form > input:focus,
 .admin-section .add-flash form > textarea:focus {
-  background-color: rgba(225, 18, 18, 0.275);
+  background-color: rgba(105, 105, 105, 0.095);
   outline: 0;
 }
 
@@ -133,7 +138,7 @@ textarea {
 .admin-section .infos-update > textarea::placeholder,
 .admin-section .add-flash form > input::placeholder,
 .admin-section .add-flash form > textarea::placeholder {
-  color: white;
+  color: rgb(138, 138, 138);
   font-family: sans-serif;
 }
 
@@ -141,10 +146,10 @@ textarea {
 .admin-section .infos-update > input[type="submit"],
 .admin-section .add-flash form > input[type="submit"] {
   width: 30%;
-  color: black;
+  color: white;
   border: none;
   transition: all 0.3s ease-in;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(1, 1, 1);
   border-radius: 5px;
 }
 
