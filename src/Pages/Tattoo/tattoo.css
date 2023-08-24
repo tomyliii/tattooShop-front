@@ -42,14 +42,14 @@
   background-color: rgba(145, 145, 145, 0.527);
   display: flex;
   width: 100%;
-  height: 600px;
+  height: 500px;
   justify-content: center;
   overflow: hidden;
   border-radius: 5px;
 }
 .flash-bloc .info-flash {
   width: 100%;
-  height: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,11 +57,11 @@
 }
 
 .flash-bloc .info-flash .description {
-  word-break: break-all;
+  word-break: normal;
   word-wrap: break-word;
   position: relative;
   white-space: pre-wrap;
-  height: 80%;
+  height: 70%;
   overflow-y: scroll;
 }
 
@@ -225,12 +225,14 @@ textarea {
 
 .tattoo-page .card img {
   width: 100%;
-
+  height: 100%;
+  object-position: center;
   object-fit: cover;
 }
 
 .flash-bloc .info-flash .description::-webkit-scrollbar {
   height: 8px;
+  width: 8px;
 }
 .flash-bloc .info-flash .description::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.112);
@@ -239,7 +241,7 @@ textarea {
 .flash-bloc .info-flash .description::-webkit-scrollbar-thumb {
   background-color: rgb(255, 0, 0);
   border-radius: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.112);
+  border: 1px solid rgba(255, 255, 255, 0.112);
 }
 
 @media screen and (max-width: 992px) {
@@ -326,7 +328,7 @@ textarea {
 
   .tattoo-page .flash-bloc {
     flex-direction: column;
-    height: 400px;
+    height: 500px;
   }
   .tattoo-page > section > div > div {
   }
@@ -344,7 +346,7 @@ textarea {
     font-size: 20px;
   }
   .flash-bloc .info-flash h3 {
-    font-size: 30px;
+    font-size: 25px;
     font-style: normal;
   }
 
