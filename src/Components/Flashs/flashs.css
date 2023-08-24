@@ -35,7 +35,7 @@
 }
 
 #flashs-section .card .image {
-  width: calc((100% + 10px) / 2);
+  width: calc((100%) / 2);
   height: 100%;
   object-position: center;
   object-fit: cover;
@@ -53,7 +53,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  width: calc((100% - 10px) / 2);
+  width: calc((100%) / 2);
   height: 100%;
 }
 .infos-card .card-hashtag {
@@ -62,9 +62,11 @@
   color: rgb(253, 0, 0);
   font-style: italic;
   word-break: normal;
-  overflow: hidden;
-  width: 100%;
   text-overflow: ellipsis;
+  width: 100%;
+
+  overflow: hidden;
+
   padding-right: 10px;
   text-transform: uppercase;
   font-weight: bolder;
@@ -76,14 +78,26 @@
 }
 .card-section .infos-card .description {
   width: 100%;
+  font-size: 16px;
   text-overflow: ellipsis;
   overflow-y: hidden;
   height: calc(100% / 3);
-  word-break: break-all;
+  word-break: normal;
+  position: relative;
+  white-space: pre-wrap;
 }
 .box-title {
   width: 100%;
+  text-transform: capitalize;
 }
+.box .box-title p {
+  transition: all 0.2 ease-in;
+}
+.box:hover .box-title p,
+.box:active .box-title p {
+  color: red;
+}
+
 .box-title > p {
   width: 100%;
   overflow: hidden;
@@ -242,6 +256,7 @@
     color: white;
   }
   .card-section .infos-card .description {
+    font-size: 10px;
     height: 50px;
   }
 }
