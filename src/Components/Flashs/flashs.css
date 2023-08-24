@@ -218,10 +218,13 @@
     height: 100%;
   }
   .infos-card {
-    padding: 10px;
+    padding: 20px;
+    height: inherit;
+
+    padding: 20px 10px;
   }
   .infos-card .card-hashtag {
-    font-size: 16px;
+    font-size: 20px;
     word-break: normal;
   }
 

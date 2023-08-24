@@ -358,7 +358,7 @@ export default function Tattoo(props) {
                     </div>
                     <div className="infos-card">
                       <h3>{flashCard.name}</h3>
-                      <p className="description">{flashCard.description}</p>
+
                       {flashCard.keywords && (
                         <p className="card-hashtag">
                           {hashtag(flashCard.keywords)}

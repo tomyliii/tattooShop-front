@@ -107,7 +107,7 @@ export default function Flashs(props) {
                     </div>
                     <div className="infos-card">
                       <h3>{flash.name}</h3>
-                      <p className="description">{flash.description}</p>
+                      {/* <p className="description">{flash.description}</p> */}
                       {flash.keywords && (
                         <p className="card-hashtag">
                           {hashtag(flash.keywords)}

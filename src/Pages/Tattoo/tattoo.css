@@ -61,7 +61,7 @@
   word-wrap: break-word;
   position: relative;
   white-space: pre-wrap;
-  height: 70%;
+  height: 50%;
   overflow-y: scroll;
 }
 
@@ -85,13 +85,11 @@
   text-transform: uppercase;
   font-weight: bolder;
   overflow: hidden;
-  padding-right: 10px;
-  overflow-x: hidden;
   width: 100%;
 }
 .flash-bloc .info-flash h3 {
   font-size: 35px;
-
+  font-style: normal;
   font-weight: bold;
   margin-bottom: 0;
   text-transform: capitalize;
@@ -186,6 +184,7 @@ textarea {
 }
 
 .tattoo-page .card-section {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -211,11 +210,11 @@ textarea {
 }
 
 .tattoo-page .card:hover {
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.311);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.807);
   scale: 1.03;
 }
 .tattoo-page .card:active {
-  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.449);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.449);
   scale: 1.05;
 }
 
@@ -334,7 +333,7 @@ textarea {
   }
   .flash-bloc .info-flash {
     gap: 20px;
-    padding: 20px;
+    padding: 20px 20px 10px 20px;
     height: calc(100% / 2);
   }
 
@@ -387,14 +386,6 @@ textarea {
   .card-section .card img {
     aspect-ratio: 1;
     height: 100%;
-  }
-  .infos-card {
-    height: inherit;
-    padding: 10px;
-  }
-  .infos-card .card-hashtag {
-    font-size: 16px;
-    word-break: normal;
   }
 
   .top-page-title {
