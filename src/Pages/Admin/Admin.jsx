@@ -178,7 +178,9 @@ export default function Admin(props) {
         <Link to={"/"}>Home</Link>
         <div className="toggle-nav">
           <Toggle isChecked={showArchived} setIsCheked={setSwhoArchived} />
-          <p>Afficher aussi les documents archivés.</p>
+          <p className={showArchived ? "green" : "red"}>
+            Afficher aussi les documents archivés.
+          </p>
         </div>
       </nav>
 
@@ -367,7 +369,7 @@ export default function Admin(props) {
               showArchived={showArchived}
               setSwhoArchived={setSwhoArchived}
             />
-            <h3>Les message</h3>
+            <h3>Les messages</h3>
             <CustomerMessages
               server={props.server}
               adminToken={props.adminToken}

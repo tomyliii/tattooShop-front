@@ -18,7 +18,7 @@ export default function EditFlash({
   const maxFilesAuthorized = 1;
   return (
     <div className="create-flash">
-      <h3>Ajouter un flash</h3>
+      <h2>Ajouter un flash</h2>
       <form
         onSubmit={(event) => {
           handleOnSubmitNewFlash(event);

@@ -1,6 +1,5 @@
 .admin-messages {
   display: flex;
-
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
@@ -8,7 +7,7 @@
 
 .admin-messages > div {
   height: 300px;
-  background-color: rgba(227, 192, 192, 0.132);
+  background-color: rgba(0, 0, 0, 0.518);
   width: calc((100% - 40px) / 3);
   border-radius: 5px;
   position: relative;
@@ -60,20 +59,26 @@
   width: 100%;
   position: sticky;
   top: 0;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.379);
   flex-direction: column;
   gap: 10px;
   border-bottom: 1px solid white;
-  padding: 10px;
+  padding: 20px;
+  color: white;
+}
+.admin-messages .info-customer p {
+  color: white;
+  font-weight: bold;
 }
 .admin-messages .customer-message {
-  padding: 10px;
+  padding: 20px;
   display: flex;
 }
 .admin-messages .customer-message p {
-  word-break: break-all;
+  word-break: normal;
   height: 100%;
   overflow-y: hidden;
+  color: white;
 }
 .admin-messages > div::-webkit-scrollbar {
   width: 8px;
@@ -87,4 +92,12 @@
   background-color: rgb(162, 7, 7);
   border-radius: 20px;
   border: 3px solid rgba(255, 255, 255, 0.112);
+}
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 600px) {
+  .admin-messages > div {
+    width: 100%;
+  }
 }

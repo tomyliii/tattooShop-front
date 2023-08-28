@@ -8,16 +8,17 @@
 .modal-admin a {
   text-decoration: underline;
   transition: all 0.3s ease-in;
+  color: black;
 }
 .modal-admin a:hover {
   color: red;
 }
 .modal-admin button {
   width: 40%;
-  color: black;
+  color: rgb(255, 255, 255);
   border: none;
   transition: all 0.3s ease-in;
-  background-color: rgb(52, 52, 52);
+  background-color: rgb(255, 0, 0);
   border-radius: 5px;
   padding: 10px;
 }

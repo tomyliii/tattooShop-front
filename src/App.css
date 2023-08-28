@@ -75,9 +75,9 @@ section {
 }
 
 .exit-button {
-  color: white;
+  color: rgb(0, 0, 0);
   font-family: sans-serif;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   border: none;
   font-weight: bold;
   text-decoration: none;
@@ -107,7 +107,7 @@ section {
 }
 [class$="modal"] > div {
   position: relative;
-  background-color: black;
+  background-color: rgb(255, 255, 255);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -145,13 +145,14 @@ textarea {
 
 [class$="modal"] form > input:focus,
 [class$="modal"] form > textarea:focus {
-  background-color: rgba(255, 255, 255, 0.803);
+  background-color: rgba(105, 105, 105, 0.095);
+  outline: 0;
   outline: 0;
 }
 
 [class$="modal"] form > input::placeholder,
 [class$="modal"] form > textarea::placeholder {
-  color: white;
+  color: rgb(192, 192, 192);
   font-family: sans-serif;
 }
 
@@ -178,6 +179,32 @@ textarea {
 
 .archived {
   background-color: rgba(255, 166, 0, 0.626);
+}
+
+.show-image {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.582);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.show-image > div {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.show-image > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media screen and (max-width: 992px) {
@@ -220,5 +247,8 @@ textarea {
   [class$="modal"] form > input[type="submit"]:active {
     background-color: red;
     color: white;
+  }
+  .tattoo-page .show-image > div {
+    width: 90%;
   }
 }
