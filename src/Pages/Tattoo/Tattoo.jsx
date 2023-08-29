@@ -339,7 +339,7 @@ export default function Tattoo(props) {
           <h2>Suggestions pour vous</h2>
           <div className="card-section">
             {errorMessage ? (
-              <div>
+              <div className="error">
                 <p>{errorMessage}</p>
               </div>
             ) : (

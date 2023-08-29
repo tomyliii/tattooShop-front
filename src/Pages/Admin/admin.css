@@ -184,6 +184,7 @@ textarea {
 }
 
 .message-validation-addFlash {
+  margin-top: 20px;
   color: black;
 }
 

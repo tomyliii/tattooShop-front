@@ -1,7 +1,10 @@
 .message-validation-project {
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.message-validation-project p {
+  margin: 20px;
+  color: black;
 }

@@ -16,11 +16,14 @@
   z-index: 3;
 }
 .validation-message-book {
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.validation-message-book p {
+  margin-top: 20px;
+  color: black;
 }
 .top-page-title h2 {
   padding-top: 10px;

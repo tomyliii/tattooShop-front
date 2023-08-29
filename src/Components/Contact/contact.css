@@ -66,11 +66,13 @@ textarea {
   color: black;
 }
 .message-validation-contac {
-  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.message-validation-contac p {
+  color: black;
 }
 @media screen and (max-width: 992px) {
 }
