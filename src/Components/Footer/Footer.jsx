@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
       </div>
       <p>
-        Created and By&nbsp;
+        Created By&nbsp;
         <a
           href="https://www.linkedin.com/in/thomas-seabra-961679271"
           target="_blank"
