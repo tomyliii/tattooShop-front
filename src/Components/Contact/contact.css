@@ -1,4 +1,4 @@
-[id="contact-section"] h2 {
+[ih3d="contact-section"] h2 {
   margin-bottom: 30px;
 }
 
@@ -66,6 +66,7 @@ textarea {
   color: black;
 }
 .message-validation-contac {
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;

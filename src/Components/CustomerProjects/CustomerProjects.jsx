@@ -78,7 +78,9 @@ export default function CustomerProjects(props) {
   ) : (
     <div className="customer-project-section">
       {projectList.length === 0 ? (
-        <p>Vous n'avez aucune demande de projet.</p>
+        <p className="info-project-section">
+          Vous n'avez aucune demande de projet.
+        </p>
       ) : (
         projectList.map((project) => {
           return (
@@ -130,7 +132,7 @@ export default function CustomerProjects(props) {
           );
         })
       )}
-      <p>{infoProject}</p>
+      <p className="info-project-section">{infoProject}</p>
       {showImg && (
         <div
           className="show-image"

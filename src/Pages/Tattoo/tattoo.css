@@ -15,7 +15,13 @@
   top: 0;
   z-index: 3;
 }
-
+.validation-message-book {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .top-page-title h2 {
   padding-top: 10px;
   font-size: 50px;

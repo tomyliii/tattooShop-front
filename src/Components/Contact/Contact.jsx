@@ -147,7 +147,7 @@ export default function Contact(props) {
               </p>
             </div>
             {errorMessage && (
-              <div>
+              <div className="error">
                 <p>{errorMessage}</p>
               </div>
             )}

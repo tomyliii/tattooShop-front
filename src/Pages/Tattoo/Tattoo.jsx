@@ -233,7 +233,7 @@ export default function Tattoo(props) {
             <h2>Je le veux !</h2>
             <div>
               {ValidationMessage ? (
-                <div>
+                <div className="validation-message-book">
                   <p>{ValidationMessage}</p>
                 </div>
               ) : (
@@ -323,7 +323,7 @@ export default function Tattoo(props) {
                     </p>
                   </div>
                   {errorMessageToBook && (
-                    <div>
+                    <div className="error">
                       <p>{errorMessageToBook}</p>
                     </div>
                   )}

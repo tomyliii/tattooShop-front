@@ -66,7 +66,7 @@ export default function CustomerMessages(props) {
   ) : (
     <div className="admin-messages">
       {messagesList.length === 0 ? (
-        <p>Vous n'avez aucun messages.</p>
+        <p className="info-admin-messages">Vous n'avez aucun messages.</p>
       ) : (
         messagesList.map((message) => {
           return (
@@ -108,7 +108,7 @@ export default function CustomerMessages(props) {
           );
         })
       )}
-      <p>{infoMessage}</p>
+      <p className="info-admin-messages">{infoMessage}</p>
     </div>
   );
 }

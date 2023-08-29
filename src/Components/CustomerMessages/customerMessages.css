@@ -5,6 +5,9 @@
   width: 100%;
 }
 
+.info-admin-messages {
+  color: black;
+}
 .admin-messages > div {
   height: 300px;
   background-color: rgba(0, 0, 0, 0.518);

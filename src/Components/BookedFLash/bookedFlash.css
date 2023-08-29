@@ -3,7 +3,9 @@
   gap: 20px;
   flex-wrap: wrap;
 }
-
+.info-booked-list {
+  color: black;
+}
 .booked-list > div {
   width: calc((100% - 20px) / 2);
   background-color: rgba(227, 192, 192, 0.132);

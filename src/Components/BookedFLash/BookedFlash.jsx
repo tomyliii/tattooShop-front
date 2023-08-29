@@ -64,7 +64,7 @@ export default function BookedFlash(props) {
   ) : (
     <div className="booked-list">
       {bookedList.length === 0 ? (
-        <p>Vous n'avez aucune réservation.</p>
+        <p className="info-booked-list">Vous n'avez aucune réservation.</p>
       ) : (
         bookedList.map((Flash) => {
           return (
@@ -113,7 +113,7 @@ export default function BookedFlash(props) {
           );
         })
       )}
-      <p>{infoBook}</p>
+      <p className="info-booked-list">{infoBook}</p>
     </div>
   );
 }

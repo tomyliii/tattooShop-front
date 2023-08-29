@@ -84,7 +84,7 @@ export default function Project(props) {
         </button>
         <h2>Vous avez une idée...</h2>
         {ValidationMessage ? (
-          <div>
+          <div className="message-validation-project">
             <p>{ValidationMessage}</p>
           </div>
         ) : (

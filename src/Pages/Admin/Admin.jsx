@@ -93,8 +93,6 @@ export default function Admin(props) {
           },
         }
       );
-      console.log(text._id, textDescription);
-      console.log(responsetext);
 
       Cookies.set("adminToken", response.data.token, {
         secure: true,
@@ -320,7 +318,9 @@ export default function Admin(props) {
                     flashPictures={files}
                     maxFilesAuthorized={maxFilesAuthorized}
                   />
-                  {errorMessageInfo && <p>{errorMessageInfo}</p>}
+                  {errorMessageInfo && (
+                    <p className="error">{errorMessageInfo}</p>
+                  )}
                   <input type="submit" value="Valider" />{" "}
                   <button
                     onClick={() => {
@@ -356,7 +356,11 @@ export default function Admin(props) {
                 setErrorMessage={setErrorMessageflash}
               />
 
-              {statusFlashAdd && <p>Flash ajouté a votre base de donnée</p>}
+              {statusFlashAdd && (
+                <p className="message-validation-addFlash">
+                  Flash ajouté a votre base de donnée
+                </p>
+              )}
             </div>
           </section>
           <section className="customer-ask">

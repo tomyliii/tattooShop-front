@@ -53,6 +53,9 @@
   color: green;
 }
 
+.info-project-section {
+  color: Black;
+}
 .customer-project-section .project-infos {
   position: relative;
   padding: 20px;

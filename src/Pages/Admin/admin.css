@@ -183,6 +183,10 @@ textarea {
   color: black;
 }
 
+.message-validation-addFlash {
+  color: black;
+}
+
 @media screen and (max-width: 992px) {
 }
 
