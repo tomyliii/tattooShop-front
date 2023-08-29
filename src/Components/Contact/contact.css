@@ -1,5 +1,5 @@
-[ih3d="contact-section"] h2 {
-  margin-bottom: 30px;
+[id="contact-section"] h2 {
+  margin-bottom: 20px;
 }
 
 [id="contact-section"] > div {
@@ -32,7 +32,6 @@ textarea {
   border-bottom: rgb(0, 0, 0) solid 1px;
   background-color: rgba(255, 255, 255, 0.17);
   border-radius: 5px 5px 0 0;
-  padding-left: 10px;
   transition: all 0.3s ease-in;
   font-size: 16px;
 }
@@ -61,6 +60,9 @@ textarea {
 [id="contact-section"] form > input[type="submit"]:hover {
   background-color: red;
   color: white;
+}
+[id="contact-section"] form > input[type="submit"]:active {
+  scale: 1.1;
 }
 #contact-section .checkbox P {
   color: black;

@@ -52,8 +52,7 @@ h2 {
 h3 {
   font-family: "Roboto", sans-serif;
   font-size: 24px;
-  margin-bottom: 30px;
-  font-style: italic;
+  /* margin-bottom: 30px; */
 }
 a {
   font-family: "Roboto", sans-serif;
@@ -70,9 +69,9 @@ a {
 button {
   cursor: pointer;
 }
-section {
+/* section {
   margin-top: 60px;
-}
+} */
 
 .exit-button {
   color: rgb(0, 0, 0);
@@ -104,6 +103,10 @@ section {
   align-items: center;
   background-color: rgba(133, 133, 133, 0.341);
   z-index: 3;
+}
+
+[class$="modal"] h2 {
+  margin-bottom: 20px;
 }
 [class$="modal"] > div {
   position: relative;
@@ -169,6 +172,9 @@ textarea {
   background-color: red;
   color: white;
 }
+[class$="modal"] form > input[type="submit"]:active {
+  scale: 1.1;
+}
 
 .checkbox {
   width: 100%;
@@ -218,7 +224,6 @@ textarea {
   }
   h2 {
     font-size: 25px;
-    margin-bottom: 10px;
   }
   h3 {
     font-size: 20px;

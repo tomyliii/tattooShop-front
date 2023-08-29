@@ -119,7 +119,7 @@ export default function FlashsAdmin(props) {
             flashsListe.map((flash) => {
               return (
                 <Link
-                  to={`/tattooadmin/${flash._id}`}
+                  to={`/tattoo/${flash._id}`}
                   key={flash._id}
                   className={`box ${!flash.disable && "archived"}`}
                 >

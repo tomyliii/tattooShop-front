@@ -9,6 +9,7 @@ import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
 import hashtag from "../../assets/Tools/Functions/hashTag";
+import TattooAdmin from "../TattooAdmin/TattooAdmin";
 
 export default function Tattoo(props) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -188,11 +189,11 @@ export default function Tattoo(props) {
       ) : (
         <section className="wrapper">
           {errorMessage ? (
-            <div>
+            <div className="error">
               <p>{errorMessage}</p>
             </div>
           ) : (
-            <div className="flash-bloc">
+            <div className="flash-bloc ">
               <div className="one-picture">
                 <img
                   onClick={(event) => {
@@ -202,8 +203,7 @@ export default function Tattoo(props) {
                   alt={`image de ${flash.name}`}
                 />
               </div>
-              <div className="info-flash">
-                {" "}
+              <div className={`info-flash ${!flash.disable && "archived"}`}>
                 <h3>{flash.name}</h3>
                 <div className="description">
                   <p>{flash.description}</p>
@@ -229,149 +229,161 @@ export default function Tattoo(props) {
               )}
             </div>
           )}
-          <div>
-            <h2>Je le veux !</h2>
+          {props.adminToken ? (
+            <TattooAdmin
+              adminToken={props.adminToken}
+              flash={flash}
+              id={id}
+              server={props.server}
+              setFlash={setFlash}
+            />
+          ) : (
             <div>
-              {ValidationMessage ? (
-                <div className="validation-message-book">
-                  <p>{ValidationMessage}</p>
-                </div>
-              ) : (
-                <form
-                  onSubmit={(event) => {
-                    handleOnSubmit(event);
-                  }}
-                  className="book-form"
-                >
-                  <input
-                    type="text"
-                    value={firstname}
-                    onChange={(event) => {
-                      handleOnChange(event.target.value, setFirstname);
+              <h2>Je le veux !</h2>
+              <div>
+                {ValidationMessage ? (
+                  <div className="validation-message-book">
+                    <p>{ValidationMessage}</p>
+                  </div>
+                ) : (
+                  <form
+                    onSubmit={(event) => {
+                      handleOnSubmit(event);
                     }}
-                    placeholder="Prénom"
-                    required
-                  />
-                  <input
-                    type="text"
-                    value={lastname}
-                    onChange={(event) => {
-                      handleOnChange(event.target.value, setLastname);
-                    }}
-                    placeholder="Nom"
-                    required
-                  />
-                  <input
-                    type="email"
-                    value={mail}
-                    onChange={(event) => {
-                      handleOnChange(event.target.value, setMail);
-                    }}
-                    placeholder="E-mail"
-                    required
-                  />
-                  <input
-                    type="number"
-                    value={number}
-                    onChange={(event) => {
-                      handleOnChange(event.target.value, setNumber);
-                    }}
-                    placeholder="Numéro de téléphone"
-                    required
-                  />
-                  <textarea
-                    name="message"
-                    id="message"
-                    cols="30"
-                    rows="10"
-                    value={messageToBook}
-                    onChange={(event) => {
-                      handleOnChange(event.target.value, setmessageToBook);
-                    }}
-                    placeholder="Entrez une description de vos attentes(emplacement, taille, modification...)"
-                  ></textarea>
-                  <div className="checkbox">
+                    className="book-form"
+                  >
                     <input
-                      type="checkbox"
-                      name="condition"
-                      id="condition"
+                      type="text"
+                      value={firstname}
                       onChange={(event) => {
-                        setCondition(!conditions);
+                        handleOnChange(event.target.value, setFirstname);
                       }}
-                      checked={conditions}
+                      placeholder="Prénom"
                       required
                     />
-                    <p>
-                      En cochant cette case,vous acceptez d'être recontacté(e)
-                      pour la suite de la réservation.
-                    </p>
-                  </div>
-                  <div className="checkbox">
                     <input
-                      type="checkbox"
-                      name="condition"
-                      id="condition"
+                      type="text"
+                      value={lastname}
                       onChange={(event) => {
-                        setNewsLetter(!newsLetter);
+                        handleOnChange(event.target.value, setLastname);
                       }}
-                      checked={newsLetter}
+                      placeholder="Nom"
+                      required
                     />
-                    <p>
-                      En cochant cette case, ouvrez-vous à des offres
-                      exceptionnelles et soyez parmi les premiers à découvrir
-                      mes dernières créations artistiques.
-                    </p>
-                  </div>
-                  {errorMessageToBook && (
-                    <div className="error">
-                      <p>{errorMessageToBook}</p>
+                    <input
+                      type="email"
+                      value={mail}
+                      onChange={(event) => {
+                        handleOnChange(event.target.value, setMail);
+                      }}
+                      placeholder="E-mail"
+                      required
+                    />
+                    <input
+                      type="number"
+                      value={number}
+                      onChange={(event) => {
+                        handleOnChange(event.target.value, setNumber);
+                      }}
+                      placeholder="Numéro de téléphone"
+                      required
+                    />
+                    <textarea
+                      name="message"
+                      id="message"
+                      cols="30"
+                      rows="10"
+                      value={messageToBook}
+                      onChange={(event) => {
+                        handleOnChange(event.target.value, setmessageToBook);
+                      }}
+                      placeholder="Entrez une description de vos attentes(emplacement, taille, modification...)"
+                    ></textarea>
+                    <div className="checkbox">
+                      <input
+                        type="checkbox"
+                        name="condition"
+                        id="condition"
+                        onChange={(event) => {
+                          setCondition(!conditions);
+                        }}
+                        checked={conditions}
+                        required
+                      />
+                      <p>
+                        En cochant cette case,vous acceptez d'être recontacté(e)
+                        pour la suite de la réservation.
+                      </p>
                     </div>
-                  )}
-                  <input type="submit" value="Valider" />
-                </form>
+                    <div className="checkbox">
+                      <input
+                        type="checkbox"
+                        name="condition"
+                        id="condition"
+                        onChange={(event) => {
+                          setNewsLetter(!newsLetter);
+                        }}
+                        checked={newsLetter}
+                      />
+                      <p>
+                        En cochant cette case, ouvrez-vous à des offres
+                        exceptionnelles et soyez parmi les premiers à découvrir
+                        mes dernières créations artistiques.
+                      </p>
+                    </div>
+                    {errorMessageToBook && (
+                      <div className="error">
+                        <p>{errorMessageToBook}</p>
+                      </div>
+                    )}
+                    <input type="submit" value="Valider" />
+                  </form>
+                )}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+      {!props.adminToken && (
+        <section className="card-block">
+          <div className="wrapper">
+            <h2>Suggestions pour vous</h2>
+            <div className="card-section">
+              {errorMessage ? (
+                <div className="error">
+                  <p>{errorMessage}</p>
+                </div>
+              ) : (
+                flashsCardList.map((flashCard, index) => {
+                  return (
+                    <Link
+                      to={`/tattoo/${flashCard._id}`}
+                      key={index + flashCard._id}
+                      className="card"
+                    >
+                      <div>
+                        <img
+                          src={flashCard.images[0].secure_url}
+                          alt={`image de ${flashCard.name}`}
+                        />
+                      </div>
+                      <div className="infos-card">
+                        <h3>{flashCard.name}</h3>
+
+                        {flashCard.keywords && (
+                          <p className="card-hashtag">
+                            {hashtag(flashCard.keywords)}
+                          </p>
+                        )}
+                      </div>
+                    </Link>
+                  );
+                })
               )}
             </div>
           </div>
         </section>
       )}
-      <section className="card-block">
-        <div className="wrapper">
-          <h2>Suggestions pour vous</h2>
-          <div className="card-section">
-            {errorMessage ? (
-              <div className="error">
-                <p>{errorMessage}</p>
-              </div>
-            ) : (
-              flashsCardList.map((flashCard, index) => {
-                return (
-                  <Link
-                    to={`/tattoo/${flashCard._id}`}
-                    key={index + flashCard._id}
-                    className="card"
-                  >
-                    <div>
-                      <img
-                        src={flashCard.images[0].secure_url}
-                        alt={`image de ${flashCard.name}`}
-                      />
-                    </div>
-                    <div className="infos-card">
-                      <h3>{flashCard.name}</h3>
-
-                      {flashCard.keywords && (
-                        <p className="card-hashtag">
-                          {hashtag(flashCard.keywords)}
-                        </p>
-                      )}
-                    </div>
-                  </Link>
-                );
-              })
-            )}
-          </div>
-        </div>
-      </section>
       {loginModal && (
         <Login
           server={props.server}

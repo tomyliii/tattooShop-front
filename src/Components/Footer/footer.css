@@ -8,7 +8,7 @@ footer {
   gap: 50px;
   padding: 50px;
   background-color: black;
-
+  border-top: white dashed 5px;
   margin-top: 50px;
 }
 footer > div {
@@ -69,8 +69,6 @@ footer .links img {
     justify-content: center;
     gap: 50px;
     padding: 50px;
-
-    border-top: white dashed 5px;
   }
 
   footer > div {

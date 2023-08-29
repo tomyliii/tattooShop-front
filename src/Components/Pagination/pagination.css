@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 20px;
+  margin-bottom: 70px;
 }
 
 .pagination-section div {
@@ -17,7 +18,7 @@
   cursor: pointer;
   padding: 10px;
   border: 1px solid black;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .pagination-section button:hover {
@@ -29,9 +30,10 @@
 }
 
 .pagination-section .selected {
-  background-color: rgb(0, 0, 0);
-  color: red;
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: bold;
+  border: red 1px solid;
 }
 @media screen and (max-width: 992px) {
 }

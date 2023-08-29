@@ -27,6 +27,9 @@
   background-color: red;
   color: white;
 }
+.modal-admin button:active {
+  scale: 1.1;
+}
 
 @media screen and (max-width: 992px) {
 }
