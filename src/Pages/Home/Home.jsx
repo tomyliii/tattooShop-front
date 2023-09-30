@@ -1,13 +1,19 @@
 import "./home.css";
 import Header from "../../Components/Header/Header";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import Img1 from "../../assets/Images/image12.jpg";
 import Flashs from "../../Components/Flashs/Flashs";
 import Contact from "../../Components/Contact/Contact";
 import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Home(props) {
+  console.log(props);
   const [isReady, setIsReady] = useState(false);
   const [text, setText] = useState("");
   const [loginModal, setLoginModal] = useState(false);
@@ -17,6 +23,7 @@ export default function Home(props) {
   } else {
     document.body.style.overflow = "";
   }
+
   useEffect(() => {
     (async () => {
       const response = await axios.get(`${props.server}text`);
@@ -27,7 +34,29 @@ export default function Home(props) {
     })();
   }, []);
 
-  console.log(projectModal);
+  // useEffect(() => {
+  //   const scrollAnimation = () => {
+  //     let ctx = gsap.context(() => {
+  //       gsap.fromTo(
+  //         "h2",
+  //         { x: 100, opacity: 0 },
+  //         {
+  //           x: 0,
+  //           opacity: 1,
+  //           delay: 0.3,
+  //           scrollTrigger: {
+  //             trigger: "h2",
+  //             start: "0",
+  //             scrub: true,
+  //             end: "bottom center",
+  //           },
+  //         }
+  //       );
+  //     });
+  //     return () => ctx.revert();
+  //   };
+  //   scrollAnimation();
+  // }, []);
 
   return !isReady ? (
     <>

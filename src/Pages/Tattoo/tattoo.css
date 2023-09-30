@@ -8,9 +8,10 @@
   height: 150px;
   display: flex;
   align-items: center;
+  box-shadow: 0 0 35px rgb(0, 0, 0);
 
   padding-left: 100px;
-  border-bottom: 1px solid white;
+
   position: sticky;
   top: 0;
   z-index: 3;
@@ -36,6 +37,7 @@
   border-bottom: none;
   padding: 20px;
   height: 100%;
+  background: linear-gradient(to right, black, white);
 }
 .tattoo-page > section {
   padding-top: 60px;

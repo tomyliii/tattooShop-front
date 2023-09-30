@@ -53,6 +53,7 @@ export default function Tattoo(props) {
         setFlashsCardList([...flashsArrayToCard]);
         setFlash(response.data);
         setIsReady(true);
+        document.title = `Flash: ${response.data.name}`;
       })();
     } catch (error) {
       console.log(error.message);

@@ -172,7 +172,7 @@ export default function Admin(props) {
     </div>
   ) : (
     <>
-      <nav className="admin-nav">
+      <nav className="admin-nav navBarShadow">
         <Link to={"/"}>Home</Link>
         <div className="toggle-nav">
           <Toggle isChecked={showArchived} setIsCheked={setSwhoArchived} />

@@ -24,12 +24,13 @@ export default function Login(props) {
       password,
       mail,
     });
-    console.log(response);
+
     Cookies.set("adminToken", response.data.token, {
       secure: true,
       expires: 7,
       sameSite: "strict",
     });
+
     props.setAdminToken(response.data.token);
   };
   return (

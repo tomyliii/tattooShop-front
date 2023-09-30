@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect, useRef } from "react";
 import "./flashs.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,6 +6,10 @@ import PagesCalculator from "../../assets/Tools/Functions/pagesCalculator";
 import Pagination from "../Pagination/Pagination";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import hashtag from "../../assets/Tools/Functions/hashTag";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Flashs(props) {
   const [flashsListe, setFlashsListe] = useState([]);
@@ -16,6 +20,7 @@ export default function Flashs(props) {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [pages, setPages] = useState([]);
+  const cardSection = useRef();
 
   useEffect(() => {
     try {
@@ -33,8 +38,8 @@ export default function Flashs(props) {
           const random = Math.floor(Math.random() * response.data.count);
           flashsArrayToCard.push(responsetoCard.data.tatoos[random]);
         }
-        PagesCalculator(response.data.count, limit, setPages);
 
+        PagesCalculator(response.data.count, limit, setPages);
         setFlashsCardList([...flashsArrayToCard]);
         setFlashsListe(response.data.tatoos);
         setIsReady(true);
@@ -60,6 +65,30 @@ export default function Flashs(props) {
     }
   }, [page]);
 
+  useEffect(() => {
+    const scrollAnimation = () => {
+      let ctx = gsap.context(() => {
+        gsap.fromTo(
+          ".card-section",
+          { x: 200, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            delay: 0.9,
+            scrollTrigger: {
+              trigger: ".card-section",
+              start: 200,
+              scrub: true,
+              end: 700,
+            },
+          }
+        );
+      });
+      return () => ctx.revert();
+    };
+    scrollAnimation();
+  }, [isReady]);
+
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -76,6 +105,22 @@ export default function Flashs(props) {
     }
   };
 
+  // gsap.fromTo(
+  //   ".card",
+  //   { opacity: 0, x: -100 },
+  //   {
+  //     opacity: 1,
+  //     x: 0,
+  //     delay: 0.4,
+  //     duration: 0.9,
+  //     scrollTrigger: {
+  //       trigger: ".card",
+  //       start: "top center",
+  //       end: "bottom center",
+  //     },
+  //   }
+  // );
+
   return !isReady ? (
     <div>
       <p>Loading, please wait...</p>
@@ -86,7 +131,7 @@ export default function Flashs(props) {
         <h2>Les Flashs</h2>
 
         <>
-          <div className="card-section">
+          <div className="card-section" ref={cardSection}>
             {errorMessage ? (
               <div>
                 <p>{errorMessage}</p>
