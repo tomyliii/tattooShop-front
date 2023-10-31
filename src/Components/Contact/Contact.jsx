@@ -1,9 +1,15 @@
+import React from "react";
 import "./contact.css";
 import Img from "../../assets/Images/image2.jpg";
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import axios from "axios";
-export default function Contact(props) {
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+function Contact(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const [ValidationMessage, setValidationMessage] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -13,25 +19,25 @@ export default function Contact(props) {
   const [message, setmessage] = useState("");
   const [conditions, setCondition] = useState(false);
   const [newsLetter, setNewsLetter] = useState(false);
-  console.log(
-    firstname,
-    lastname,
-    mail,
-    number,
-    message,
-    conditions,
-    newsLetter
-  );
+  // console.log(
+  //   firstname,
+  //   lastname,
+  //   mail,
+  //   number,
+  //   message,
+  //   conditions,
+  //   newsLetter
+  // );
   const handleOnSubmit = async (event) => {
-    console.log(
-      firstname,
-      lastname,
-      mail,
-      number,
-      message,
-      conditions,
-      newsLetter
-    );
+    // console.log(
+    //   firstname,
+    //   lastname,
+    //   mail,
+    //   number,
+    //   message,
+    //   conditions,
+    //   newsLetter
+    // );
 
     event.preventDefault();
     if (firstname && lastname && mail && number && conditions) {
@@ -56,6 +62,64 @@ export default function Contact(props) {
       setErrorMessage("Certains champs obligatoires n'ont pas été complétés. ");
     }
   };
+
+  gsap.registerEffect({
+    name: "slideToLeft",
+    effect: (targets, config) => {
+      return gsap.fromTo(
+        targets,
+        { x: 200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: targets,
+            start: "top bottom",
+            scrub: true,
+            end: "top center",
+          },
+        }
+      );
+    },
+  });
+  gsap.registerEffect({
+    name: "slideToRight",
+    effect: (targets, config) => {
+      return gsap.fromTo(
+        targets,
+        { x: -200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: targets,
+            start: "top bottom",
+            scrub: true,
+            end: "top center",
+          },
+        }
+      );
+    },
+  });
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.effects.slideToLeft(".img-contact");
+    });
+    return () => ctx.revert();
+  });
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.effects.slideToRight(".form-contact");
+    });
+    return () => {
+      ctx.revert();
+    };
+  });
+
   return (
     <section id="contact-section">
       <h2>Contact</h2>
@@ -66,6 +130,7 @@ export default function Contact(props) {
           </div>
         ) : (
           <form
+            className="form-contact"
             onSubmit={(event) => {
               handleOnSubmit(event);
             }}
@@ -155,9 +220,15 @@ export default function Contact(props) {
           </form>
         )}
         <div>
-          <img src={Img} alt="image d'une ensaigne à néon Tattoo" />
+          <img
+            className="img-contact"
+            src={Img}
+            alt="image d'une ensaigne à néon Tattoo"
+          />
         </div>
       </div>
     </section>
   );
 }
+
+export default React.memo(Contact);

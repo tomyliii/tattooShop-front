@@ -297,6 +297,7 @@ textarea {
   .tattoo-page .small-screen-menu button,
   .tattoo-page .small-screen-menu a {
     font-size: 30px;
+    color: white;
     transition: all 0.2s ease-out;
   }
   .tattoo-page .small-screen-menu button:active,

@@ -9,11 +9,12 @@ import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home(props) {
-  console.log(props);
+  // console.log(props);
+
   const [isReady, setIsReady] = useState(false);
   const [text, setText] = useState("");
   const [loginModal, setLoginModal] = useState(false);
@@ -33,30 +34,6 @@ export default function Home(props) {
       setIsReady(true);
     })();
   }, []);
-
-  // useEffect(() => {
-  //   const scrollAnimation = () => {
-  //     let ctx = gsap.context(() => {
-  //       gsap.fromTo(
-  //         "h2",
-  //         { x: 100, opacity: 0 },
-  //         {
-  //           x: 0,
-  //           opacity: 1,
-  //           delay: 0.3,
-  //           scrollTrigger: {
-  //             trigger: "h2",
-  //             start: "0",
-  //             scrub: true,
-  //             end: "bottom center",
-  //           },
-  //         }
-  //       );
-  //     });
-  //     return () => ctx.revert();
-  //   };
-  //   scrollAnimation();
-  // }, []);
 
   return !isReady ? (
     <>
@@ -86,10 +63,11 @@ export default function Home(props) {
                 className="img-aboute-me-little-creen"
               />
               <p className="css-fix ">
-                <span className="start-text-description">❝ </span>
-                <br />
-                {text} <br />
-                <span className="end-text-description"> ❞</span>
+                {/* <span className="start-text-description">❝ </span>
+                <br /> */}
+                {text}
+                {/* <br />
+                <span className="end-text-description"> ❞</span> */}
               </p>
             </div>
           </section>

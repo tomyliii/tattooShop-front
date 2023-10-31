@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import "./login.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +7,7 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie";
 import handleOnChange from "../../../assets/Tools/Functions/HandleOnChange";
 import axios from "axios";
-export default function Login(props) {
+function Login(props) {
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -104,3 +105,5 @@ export default function Login(props) {
     </section>
   );
 }
+
+export default React.memo(Login);

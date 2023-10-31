@@ -206,6 +206,7 @@ export default function Tattoo(props) {
               </div>
               <div className={`info-flash ${!flash.disable && "archived"}`}>
                 <h3>{flash.name}</h3>
+
                 <div className="description">
                   <p>{flash.description}</p>
                 </div>
@@ -361,6 +362,9 @@ export default function Tattoo(props) {
                       to={`/tattoo/${flashCard._id}`}
                       key={index + flashCard._id}
                       className="card"
+                      onClick={() => {
+                        window.scrollTo(0, 0);
+                      }}
                     >
                       <div>
                         <img

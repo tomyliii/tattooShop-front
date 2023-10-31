@@ -1,3 +1,4 @@
+import React from "react";
 import DragAndDrop from "../../DragAndDrop/DragAndDrop";
 import "./project.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -5,7 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import handleOnChange from "../../../assets/Tools/Functions/HandleOnChange";
 import axios from "axios";
-export default function Project(props) {
+function Project(props) {
   const [errorMessage, setErrorMessage] = useState("");
   const [ValidationMessage, setValidationMessage] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -187,3 +188,5 @@ export default function Project(props) {
     </section>
   );
 }
+
+export default React.memo(Project);

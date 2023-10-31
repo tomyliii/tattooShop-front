@@ -4,11 +4,10 @@ import Logo from "../../assets/Images/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import React from "react";
 import { HashLink } from "react-router-hash-link";
 import { useState, useRef, useLayoutEffect } from "react";
-export default function Header(props) {
+function Header(props) {
   const [ModalMenu, setModalMenu] = useState(false);
   const effectHeader = useRef();
 
@@ -233,3 +232,5 @@ export default function Header(props) {
     </>
   );
 }
+
+export default React.memo(Header);

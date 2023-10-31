@@ -1,10 +1,9 @@
 import "./footer.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 import InstaLogo from "../../assets/Images/instaLogo.png";
 import tikTokLogo from "../../assets/Images/tikTokLogo.png";
 
-export default function Footer() {
+function Footer() {
   return (
     <footer>
       <div>
@@ -69,3 +68,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+export default React.memo(Footer);

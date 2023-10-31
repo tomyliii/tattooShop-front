@@ -65,30 +65,6 @@ export default function Flashs(props) {
     }
   }, [page]);
 
-  useEffect(() => {
-    const scrollAnimation = () => {
-      let ctx = gsap.context(() => {
-        gsap.fromTo(
-          ".card-section",
-          { x: 200, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            delay: 0.9,
-            scrollTrigger: {
-              trigger: ".card-section",
-              start: 200,
-              scrub: true,
-              end: 700,
-            },
-          }
-        );
-      });
-      return () => ctx.revert();
-    };
-    scrollAnimation();
-  }, [isReady]);
-
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -105,21 +81,62 @@ export default function Flashs(props) {
     }
   };
 
-  // gsap.fromTo(
-  //   ".card",
-  //   { opacity: 0, x: -100 },
-  //   {
-  //     opacity: 1,
-  //     x: 0,
-  //     delay: 0.4,
-  //     duration: 0.9,
-  //     scrollTrigger: {
-  //       trigger: ".card",
-  //       start: "top center",
-  //       end: "bottom center",
-  //     },
-  //   }
-  // );
+  gsap.registerEffect({
+    name: "slideToLeft",
+    effect: (targets, config) => {
+      return gsap.fromTo(
+        targets,
+        { x: 200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: targets,
+            start: "top bottom",
+            scrub: true,
+            end: "top center",
+          },
+        }
+      );
+    },
+  });
+  gsap.registerEffect({
+    name: "slideToRight",
+    effect: (targets, config) => {
+      return gsap.fromTo(
+        targets,
+        { x: -200, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+
+          scrollTrigger: {
+            trigger: targets,
+            start: "top bottom",
+            scrub: true,
+            end: "top center",
+          },
+        }
+      );
+    },
+  });
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.effects.slideToLeft(".box-section");
+    });
+    return () => ctx.revert();
+  }, [isReady]);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.effects.slideToRight(".card-section");
+    });
+    return () => {
+      ctx.revert();
+    };
+  }, [isReady]);
 
   return !isReady ? (
     <div>
@@ -143,6 +160,9 @@ export default function Flashs(props) {
                     to={`/tattoo/${flash._id}`}
                     key={index + flash._id}
                     className="card"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     <div className="image">
                       <img
@@ -191,6 +211,9 @@ export default function Flashs(props) {
                     to={`/tattoo/${flash._id}`}
                     key={flash._id}
                     className="box"
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     <div>
                       <img
