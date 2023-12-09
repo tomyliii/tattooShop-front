@@ -14,6 +14,9 @@ export default function TattooAdmin({
   id,
   adminToken,
   setFlash,
+  success,
+  warning,
+  error,
 }) {
   const navigate = useNavigate();
 
@@ -92,21 +95,23 @@ export default function TattooAdmin({
       setPicturesToAdd([]);
       setFlash(response.data);
       setFlashPicutres([]);
+      succes("Flash mis à jour!");
     } catch (error) {
-      console.log(error);
-      if (error.response.data.message) {
-        setErrorMessageflash(error.response.data.message);
-      } else {
-        if (error.status) {
-          console.log({ status: error.status, message: error.message });
-        } else {
-          console.log(error.message);
-        }
-        setErrorMessageflash("Une erreur est survenue.");
-      }
-      setTimeout(() => {
-        setErrorMessageflash("");
-      }, 3000);
+      error("Une erreur est survenue");
+      // console.log(error);
+      // if (error.response.data.message) {
+      //   setErrorMessageflash(error.response.data.message);
+      // } else {
+      //   if (error.status) {
+      //     console.log({ status: error.status, message: error.message });
+      //   } else {
+      //     console.log(error.message);
+      //   }
+      //   setErrorMessageflash("Une erreur est survenue.");
+      // }
+      // setTimeout(() => {
+      //   setErrorMessageflash("");
+      // }, 3000);
     }
   };
 
@@ -117,19 +122,20 @@ export default function TattooAdmin({
       console.log(response);
       navigate("/admin/edit");
     } catch (error) {
-      if (error.response) {
-        setErrorMessageflash(error.response);
-      } else {
-        if (error.status) {
-          console.log({ status: error.status, message: error.message });
-        } else {
-          console.log(error.message);
-        }
-        setErrorMessageflash("Une erreur est survenue.");
-      }
-      setTimeout(() => {
-        setErrorMessageflash("");
-      }, 3000);
+      error("Une erreur est survenue");
+      // if (error.response) {
+      //   setErrorMessageflash(error.response);
+      // } else {
+      //   if (error.status) {
+      //     console.log({ status: error.status, message: error.message });
+      //   } else {
+      //     console.log(error.message);
+      //   }
+      //   setErrorMessageflash("Une erreur est survenue.");
+      // }
+      // setTimeout(() => {
+      //   setErrorMessageflash("");
+      // }, 3000);
     }
   };
   console.log(picturesToAdd);

@@ -10,7 +10,7 @@ import axios from "axios";
 function Login(props) {
   const [password, setPassword] = useState("");
   const [mail, setMail] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+
   const handleOnClick = () => {
     props.setAdminToken("");
     Cookies.remove("adminToken", {
@@ -18,21 +18,27 @@ function Login(props) {
       expires: 7,
       sameSite: "strict",
     });
+    props.success("Vous êtes déconnecté...Si Si !");
   };
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.post(`${props.server}admin/login`, {
-      password,
-      mail,
-    });
+    if (password && mail) {
+      const response = await axios.post(`${props.server}admin/login`, {
+        password,
+        mail,
+      });
 
-    Cookies.set("adminToken", response.data.token, {
-      secure: true,
-      expires: 7,
-      sameSite: "strict",
-    });
+      Cookies.set("adminToken", response.data.token, {
+        secure: true,
+        expires: 7,
+        sameSite: "strict",
+      });
 
-    props.setAdminToken(response.data.token);
+      props.setAdminToken(response.data.token);
+      props.success("Vous êtes connecté...BIATCH!");
+    } else {
+      props.error("veuillez remplir tous les champs.");
+    }
   };
   return (
     <section
@@ -98,7 +104,6 @@ function Login(props) {
               />
               <input type="submit" value="valider" />
             </form>
-            <p>{errorMessage}</p>
           </>
         )}
       </div>

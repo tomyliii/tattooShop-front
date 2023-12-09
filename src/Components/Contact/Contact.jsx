@@ -4,13 +4,12 @@ import Img from "../../assets/Images/image2.jpg";
 import { useState, useLayoutEffect } from "react";
 import handleOnChange from "../../assets/Tools/Functions/HandleOnChange";
 import axios from "axios";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-function Contact(props) {
-  const [errorMessage, setErrorMessage] = useState("");
+const Contact = (props) => {
   const [ValidationMessage, setValidationMessage] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -50,75 +49,83 @@ function Contact(props) {
           newsLetter,
           message,
         });
-
-        setValidationMessage(
-          "Votre message à été envoyée. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
-        );
+        setFirstname("");
+        setLastname("");
+        setMail("");
+        setNumber("");
+        setCondition(false);
+        setNewsLetter(false);
+        props.success("Votre message à bien été envoyée. A trés bientôt.");
+        // setValidationMessage(
+        //   "Votre message à été envoyée. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
+        // );
       } catch (error) {
-        console.log(error.message);
-        setErrorMessage("Une erreur est survenue.");
+        // console.log(error.message);
+        props.error("Une erreur est survenue.");
+        // setErrorMessage("Une erreur est survenue.");
       }
     } else {
-      setErrorMessage("Certains champs obligatoires n'ont pas été complétés. ");
+      props.error("Veuillez remplir tous les champs obligatoire.");
+      // setErrorMessage("Certains champs obligatoires n'ont pas été complétés. ");
     }
   };
 
-  gsap.registerEffect({
-    name: "slideToLeft",
-    effect: (targets, config) => {
-      return gsap.fromTo(
-        targets,
-        { x: 200, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
+  // gsap.registerEffect({
+  //   name: "slideToLeft",
+  //   effect: (targets, config) => {
+  //     return gsap.fromTo(
+  //       targets,
+  //       { x: 200, opacity: 0 },
+  //       {
+  //         x: 0,
+  //         opacity: 1,
 
-          scrollTrigger: {
-            trigger: targets,
-            start: "top bottom",
-            scrub: true,
-            end: "top center",
-          },
-        }
-      );
-    },
-  });
-  gsap.registerEffect({
-    name: "slideToRight",
-    effect: (targets, config) => {
-      return gsap.fromTo(
-        targets,
-        { x: -200, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
+  //         scrollTrigger: {
+  //           trigger: targets,
+  //           start: "top bottom",
+  //           scrub: true,
+  //           end: "top center",
+  //         },
+  //       }
+  //     );
+  //   },
+  // });
+  // gsap.registerEffect({
+  //   name: "slideToRight",
+  //   effect: (targets, config) => {
+  //     return gsap.fromTo(
+  //       targets,
+  //       { x: -200, opacity: 0 },
+  //       {
+  //         x: 0,
+  //         opacity: 1,
 
-          scrollTrigger: {
-            trigger: targets,
-            start: "top bottom",
-            scrub: true,
-            end: "top center",
-          },
-        }
-      );
-    },
-  });
+  //         scrollTrigger: {
+  //           trigger: targets,
+  //           start: "top bottom",
+  //           scrub: true,
+  //           end: "top center",
+  //         },
+  //       }
+  //     );
+  //   },
+  // });
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.effects.slideToLeft(".img-contact");
-    });
-    return () => ctx.revert();
-  });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.effects.slideToLeft(".img-contact");
+  //   });
+  //   return () => ctx.revert();
+  // }, []);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.effects.slideToRight(".form-contact");
-    });
-    return () => {
-      ctx.revert();
-    };
-  });
+  // useLayoutEffect(() => {
+  //   let ctx = gsap.context(() => {
+  //     gsap.effects.slideToRight(".form-contact");
+  //   });
+  //   return () => {
+  //     ctx.revert();
+  //   };
+  // }, []);
 
   return (
     <section id="contact-section">
@@ -141,8 +148,7 @@ function Contact(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setFirstname);
               }}
-              placeholder="Prénom"
-              required
+              placeholder="Prénom *"
             />
             <input
               type="text"
@@ -150,8 +156,7 @@ function Contact(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setLastname);
               }}
-              placeholder="Nom"
-              required
+              placeholder="Nom *"
             />
             <input
               type="email"
@@ -159,8 +164,7 @@ function Contact(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setMail);
               }}
-              placeholder="E-mail"
-              required
+              placeholder="E-mail *"
             />
             <input
               type="number"
@@ -168,8 +172,7 @@ function Contact(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setNumber);
               }}
-              placeholder="Numéro de téléphone"
-              required
+              placeholder="Numéro de téléphone *"
             />
             <textarea
               name="message"
@@ -180,7 +183,7 @@ function Contact(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setmessage);
               }}
-              placeholder="Entrez une description de vos attentes(emplacement, taille, modification...)"
+              placeholder="Entrez une description de vos attentes(emplacement, taille, modification...) *"
             ></textarea>
             <div className="checkbox">
               <input
@@ -191,9 +194,8 @@ function Contact(props) {
                   setCondition(!conditions);
                 }}
                 checked={conditions}
-                required
               />
-              <p>En cochant cette case,vous acceptez d'être recontacté(e).</p>
+              <p>En cochant cette case,vous acceptez d'être recontacté(e). *</p>
             </div>
             <div className="checkbox">
               <input
@@ -211,11 +213,9 @@ function Contact(props) {
                 artistiques.
               </p>
             </div>
-            {errorMessage && (
-              <div className="error">
-                <p>{errorMessage}</p>
-              </div>
-            )}
+            <p style={{ color: "red", fontWeight: "bold" }}>
+              Les champs avec un (*) sont obligatoires.
+            </p>
             <input type="submit" value="Valider" />
           </form>
         )}
@@ -229,6 +229,6 @@ function Contact(props) {
       </div>
     </section>
   );
-}
+};
 
 export default React.memo(Contact);

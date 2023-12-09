@@ -37,9 +37,11 @@ export default function BookedFlash(props) {
       setTimeout(() => {
         setInfoBook("");
       }, 5000);
+      props.success("Si Si la la putin de réservation est mise à jour");
     } catch (error) {
-      console.log(error);
-      setInfoBook("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      // console.log(error);
+      // setInfoBook("Une erreur est survenue");
     }
   };
   const handleOnClickSup = async (value) => {
@@ -52,9 +54,11 @@ export default function BookedFlash(props) {
       setTimeout(() => {
         setInfoBook("");
       }, 5000);
+      props.success("C'est good fréro la réservation est supprimée ! ");
     } catch (error) {
-      console.log(error);
-      setInfoBook("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      // console.log(error);
+      // setInfoBook("Une erreur est survenue");
     }
   };
   return !isReady ? (
@@ -113,7 +117,7 @@ export default function BookedFlash(props) {
           );
         })
       )}
-      <p className="info-booked-list">{infoBook}</p>
+      {/* <p className="info-booked-list">{infoBook}</p> */}
     </div>
   );
 }

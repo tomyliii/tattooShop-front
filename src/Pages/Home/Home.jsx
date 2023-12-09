@@ -9,11 +9,23 @@ import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home(props) {
   // console.log(props);
+
+  const error = (txt) => {
+    toast.error(txt);
+  };
+  const warning = (txt) => {
+    toast.warning(txt);
+  };
+  const success = (txt) => {
+    toast.success(txt);
+  };
 
   const [isReady, setIsReady] = useState(false);
   const [text, setText] = useState("");
@@ -76,7 +88,12 @@ export default function Home(props) {
           <Flashs server={props.server} />
         </div>
         <div className="wrapper">
-          <Contact server={props.server} />
+          <Contact
+            server={props.server}
+            success={success}
+            warning={warning}
+            error={error}
+          />
         </div>
         {loginModal && (
           <Login
@@ -84,12 +101,33 @@ export default function Home(props) {
             setLoginModal={setLoginModal}
             adminToken={props.adminToken}
             setAdminToken={props.setAdminToken}
+            success={success}
+            warning={warning}
+            error={error}
           />
         )}
         {projectModal && (
-          <Project server={props.server} setProjectModal={setProjectModal} />
+          <Project
+            server={props.server}
+            setProjectModal={setProjectModal}
+            success={success}
+            warning={warning}
+            error={error}
+          />
         )}
       </main>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }

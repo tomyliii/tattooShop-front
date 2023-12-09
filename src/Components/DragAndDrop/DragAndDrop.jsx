@@ -107,7 +107,9 @@ export default function DragAndDrop(props) {
         ) : isDragActive ? (
           <p className="drag-Accept">Déposez vos photos.</p>
         ) : (
-          <p>Glissez et déposez vos photos ou cliquez pour les séléctionner.</p>
+          <p>
+            Glissez et déposez vos photos ou cliquez pour les séléctionner. *
+          </p>
         )}
         <button type="button">
           <FontAwesomeIcon icon={faPlus} />
@@ -139,7 +141,7 @@ export default function DragAndDrop(props) {
         )}
 
         {rejectedItems.length !== 0 && (
-          <div className="pictures-rejected">
+          <div className="pictures-rejected ">
             <h4>Fichier(s) refusé(s):</h4>
             <ul>{rejectedItems}</ul>
           </div>

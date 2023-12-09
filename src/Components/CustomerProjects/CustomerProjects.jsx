@@ -47,13 +47,15 @@ export default function CustomerProjects(props) {
       const response = await instance.put(
         `admin/manageprojectcustomer/${value}`
       );
+      props.success("Si Si le projet client est mise à jour");
       setInfoProject("Réservation mise à jour.");
       setTimeout(() => {
         setInfoProject("");
       }, 5000);
     } catch (error) {
-      console.log(error);
-      setInfoProject("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      // console.log(error);
+      // setInfoProject("Une erreur est survenue");
     }
   };
   const handleOnClickSup = async (value) => {
@@ -66,9 +68,11 @@ export default function CustomerProjects(props) {
       setTimeout(() => {
         setInfoProject("");
       }, 5000);
+      props.success("C'est good fréro le projet client est supprimé ! ");
     } catch (error) {
-      console.log(error);
-      setInfoProject("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      // console.log(error);
+      // setInfoProject("Une erreur est survenue");
     }
   };
   return !isReady ? (
@@ -132,7 +136,7 @@ export default function CustomerProjects(props) {
           );
         })
       )}
-      <p className="info-project-section">{infoProject}</p>
+      {/* <p className="info-project-section">{infoProject}</p> */}
       {showImg && (
         <div
           className="show-image"

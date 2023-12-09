@@ -98,7 +98,7 @@
 .pictures-rejected > ul {
   font-family: maison-noeue, sans-serif;
   word-break: break-all;
-  color: white;
+  /* color: white; */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -118,7 +118,7 @@
 @media screen and (max-width: 992px) {
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
   .pictures-accepted > div {
     flex-direction: column;
   }

@@ -99,7 +99,7 @@
 .pictures-rejected > ul {
   font-family: maison-noeue, sans-serif;
   word-break: break-all;
-  color: white;
+  color: red;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -108,7 +108,7 @@
   padding-bottom: 20px;
   font-size: 14px;
 }
-.drag-Reject {
+.drag-Reject li {
   color: red;
 }
 

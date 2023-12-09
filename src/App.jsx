@@ -35,7 +35,13 @@ function App() {
           />
           <Route
             path="tattoo/:id"
-            element={<Tattoo server={server} adminToken={adminToken} />}
+            element={
+              <Tattoo
+                server={server}
+                adminToken={adminToken}
+                setAdminToken={setAdminToken}
+              />
+            }
           />
           <Route
             path="admin/edit"

@@ -39,9 +39,11 @@ export default function CustomerMessages(props) {
       setTimeout(() => {
         setInfoMessage("");
       }, 5000);
+      props.success("Si Si le message est mise à jour");
     } catch (error) {
-      console.log(error);
-      setInfoMessage("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      //   console.log(error);
+      //   setInfoMessage("Une erreur est survenue");
     }
   };
   const handleOnClickSup = async (value) => {
@@ -54,9 +56,11 @@ export default function CustomerMessages(props) {
       setTimeout(() => {
         setInfoMessage("");
       }, 5000);
+      props.success("C'est good fréro le message est supprimé ! ");
     } catch (error) {
-      console.log(error);
-      setInfoMessage("Une erreur est survenue");
+      props.error("Une erreur est survenue");
+      // console.log(error);
+      // setInfoMessage("Une erreur est survenue");
     }
   };
   return !isReady ? (
@@ -108,7 +112,7 @@ export default function CustomerMessages(props) {
           );
         })
       )}
-      <p className="info-admin-messages">{infoMessage}</p>
+      {/* <p className="info-admin-messages">{infoMessage}</p> */}
     </div>
   );
 }

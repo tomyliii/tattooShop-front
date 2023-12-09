@@ -103,6 +103,7 @@
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
   padding-right: 10px;
 }
 .infos-card .description::-webkit-scrollbar {
@@ -198,9 +199,12 @@
   color: white;
 }
 @media screen and (max-width: 992px) {
+  .box-section > .box {
+    width: calc((100% - 60px) / 4);
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
   #flashs-section {
     gap: 30px;
   }

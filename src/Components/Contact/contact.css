@@ -79,7 +79,7 @@ textarea {
 @media screen and (max-width: 992px) {
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
   [id="contact-section"] > div {
     flex-direction: column;
   }

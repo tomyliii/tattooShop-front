@@ -48,18 +48,20 @@ function Project(props) {
             headers: { "Content-Type": "multipart/form-data" },
           }
         );
-
+        props.success("Votre message à bien été envoyée. A trés bientôt.");
         setValidationMessage(
           "Votre projet à été envoyé. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
         );
       } else {
-        setErrorMessage(
-          "Certains champs obligatoires n'ont pas été complétés. "
-        );
+        props.error("Certains champs obligatoires n'ont pas été complétés. ");
+        // setErrorMessage(
+        //   "Certains champs obligatoires n'ont pas été complétés. "
+        // );
       }
     } catch (error) {
-      console.log(error);
-      setErrorMessage("Une erreur est survenue.");
+      props.error("Une erreur est survenue.");
+      // console.log(error);
+      // setErrorMessage("Une erreur est survenue.");
     }
   };
 
@@ -100,8 +102,7 @@ function Project(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setFirstname);
               }}
-              placeholder="Prénom"
-              required
+              placeholder="Prénom *"
             />
             <input
               type="text"
@@ -109,8 +110,7 @@ function Project(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setLastname);
               }}
-              placeholder="Nom"
-              required
+              placeholder="Nom *"
             />
             <input
               type="email"
@@ -118,8 +118,7 @@ function Project(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setMail);
               }}
-              placeholder="E-mail"
-              required
+              placeholder="E-mail *"
             />
             <input
               type="number"
@@ -127,8 +126,7 @@ function Project(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setNumber);
               }}
-              placeholder="Numéro de téléphone"
-              required
+              placeholder="Numéro de téléphone *"
             />
             <textarea
               name="message"
@@ -139,7 +137,7 @@ function Project(props) {
               onChange={(event) => {
                 handleOnChange(event.target.value, setmessage);
               }}
-              placeholder="Entrez une description de vos attentes(emplacement, taille, modification...)"
+              placeholder="Entrez une description de vos attentes(emplacement, taille, modification...) *"
             ></textarea>
             <DragAndDrop
               setFlashPictures={setFiles}
@@ -156,9 +154,8 @@ function Project(props) {
                   setCondition(!conditions);
                 }}
                 checked={conditions}
-                required
               />
-              <p>En cochant cette case,vous acceptez d'être recontacté(e).</p>
+              <p>En cochant cette case,vous acceptez d'être recontacté(e) *.</p>
             </div>
             <div className="checkbox">
               <input
@@ -176,11 +173,11 @@ function Project(props) {
                 artistiques.
               </p>
             </div>
-            {errorMessage && (
-              <div>
-                <p>{errorMessage}</p>
-              </div>
-            )}
+            <p
+              style={{ color: "red", fontWeight: "bold", textAlign: "center" }}
+            >
+              Les champs avec un (*) sont obligatoires.
+            </p>
             <input type="submit" value="Valider" />
           </form>
         )}

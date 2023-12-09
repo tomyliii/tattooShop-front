@@ -55,10 +55,49 @@ main {
 .img-aboute-me-little-creen {
   display: none;
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+  #about-me-section > div {
+    width: 100%;
+    flex-direction: column;
+    padding: 5px;
+    overflow: hidden;
+    gap: 20px;
+  }
+  #about-me-section > div img {
+    margin-top: 30px;
+    translate: 0px;
+    width: 100%;
+    transform: perspective(000px) rotateY(00deg);
+  }
+  .css-fix {
+    translate: 0px;
+    width: 90%;
+    left: 0;
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  #about-me-section > div {
+    position: relative;
+    overflow: inherit;
+  }
+  .img-aboute-me {
+    visibility: hidden;
+  }
+  #about-me-section .img-aboute-me-little-creen {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 110vw;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
   .wrapper {
     width: 100%;
     margin: 0 auto;
@@ -85,7 +124,7 @@ main {
     translate: 0px;
     width: 90%;
     left: 0;
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 20px;
     border-radius: 5px;
   }
@@ -114,5 +153,10 @@ main {
   #about-me-section .start-text-description {
     top: -10px;
     left: 0;
+  }
+}
+@media screen and (max-width: 700px) {
+  .css-fix {
+    margin-top: 80px;
   }
 }

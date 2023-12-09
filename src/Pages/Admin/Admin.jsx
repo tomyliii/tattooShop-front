@@ -11,6 +11,8 @@ import BookedFlash from "../../Components/BookedFLash/BookedFlash";
 import CustomerMessages from "../../Components/CustomerMessages/CustomerMessages";
 import CustomerProjects from "../../Components/CustomerProjects/CustomerProjects";
 import Toggle from "../../Components/Toggle/Toggle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Admin(props) {
   const [admin, setAdmin] = useState({});
@@ -36,6 +38,17 @@ export default function Admin(props) {
   const [showArchived, setSwhoArchived] = useState(false);
   const maxFilesAuthorized = 1;
   document.body.style.overflow = "";
+
+  const error = (txt) => {
+    toast.error(txt);
+  };
+  const warning = (txt) => {
+    toast.warning(txt);
+  };
+  const success = (txt) => {
+    toast.success(txt);
+  };
+
   useEffect(() => {
     try {
       if (!props.adminToken) {
@@ -62,7 +75,8 @@ export default function Admin(props) {
     try {
       event.preventDefault();
       if (password && password !== confirmPassword) {
-        return setErrorMessageInfo("Les mots de passe ne sont pas identiques.");
+        error("Les mots de passe ne sont pas identiques.");
+        // return setErrorMessageInfo("Les mots de passe ne sont pas identiques.");
       }
 
       const formData = new FormData();
@@ -103,13 +117,15 @@ export default function Admin(props) {
       setFiles([]);
       setErrorMessageInfo("");
       setUpdateInfos(false);
+      success("Mise à jour éffectuée.");
     } catch (error) {
       if (error.status) {
         console.log({ status: error.status, message: error.message });
       } else {
         console.log(error.message);
       }
-      setErrorMessageInfo("Une erreur est survenue.");
+      error("une erreur est surevenue");
+      // setErrorMessageInfo("Une erreur est survenue.");
     }
   };
   const handleOnSubmitNewFlash = async (event) => {
@@ -135,7 +151,7 @@ export default function Admin(props) {
             },
           }
         );
-
+        success("Flash ajouté... Putin que c'est beau!!");
         setStatusFlashAdd(true);
         setFlashPicutres([...[]]);
         setFlashDescription("");
@@ -146,12 +162,15 @@ export default function Admin(props) {
           setStatusFlashAdd(false);
         }, 5000);
       } else {
-        setErrorMessageflash(
+        error(
           "Information(s) manquante(s). Impossible de valider votre demande."
         );
-        setTimeout(() => {
-          setErrorMessageflash("");
-        }, 5000);
+        // setErrorMessageflash(
+        //   "Information(s) manquante(s). Impossible de valider votre demande."
+        // );
+        // setTimeout(() => {
+        //   setErrorMessageflash("");
+        // }, 5000);
       }
     } catch (error) {
       if (error.status) {
@@ -159,10 +178,11 @@ export default function Admin(props) {
       } else {
         console.log(error.message);
       }
-      setErrorMessageflash("Une erreur est survenue.");
-      setTimeout(() => {
-        setErrorMessageflash("");
-      }, 5000);
+      error("Une erreur est suvenue.");
+      // setErrorMessageflash("Une erreur est survenue.");
+      // setTimeout(() => {
+      //   setErrorMessageflash("");
+      // }, 5000);
     }
   };
 
@@ -337,8 +357,12 @@ export default function Admin(props) {
           <section>
             <div>
               <FlashsAdmin
+                statusFlashAdd={statusFlashAdd}
                 server={props.server}
                 adminToken={props.adminToken}
+                success={success}
+                warning={warning}
+                error={error}
               ></FlashsAdmin>
             </div>
             <div className="add-flash">
@@ -356,11 +380,11 @@ export default function Admin(props) {
                 setErrorMessage={setErrorMessageflash}
               />
 
-              {statusFlashAdd && (
+              {/* {statusFlashAdd && (
                 <p className="message-validation-addFlash">
                   Flash ajouté a votre base de donnée
                 </p>
-              )}
+              )} */}
             </div>
           </section>
           <section className="customer-ask">
@@ -372,6 +396,9 @@ export default function Admin(props) {
               adminToken={props.adminToken}
               showArchived={showArchived}
               setSwhoArchived={setSwhoArchived}
+              success={success}
+              warning={warning}
+              error={error}
             />
             <h3>Les messages</h3>
             <CustomerMessages
@@ -379,6 +406,9 @@ export default function Admin(props) {
               adminToken={props.adminToken}
               showArchived={showArchived}
               setSwhoArchived={setSwhoArchived}
+              success={success}
+              warning={warning}
+              error={error}
             />
             <h3>Les projets</h3>
             <CustomerProjects
@@ -386,10 +416,25 @@ export default function Admin(props) {
               adminToken={props.adminToken}
               showArchived={showArchived}
               setSwhoArchived={setSwhoArchived}
+              success={success}
+              warning={warning}
+              error={error}
             />
           </section>
         </div>
       </main>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </>
   );
 }

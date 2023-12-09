@@ -10,6 +10,8 @@ import Login from "../../Components/Modals/Login/Login";
 import Project from "../../Components/Modals/Project/Project";
 import hashtag from "../../assets/Tools/Functions/hashTag";
 import TattooAdmin from "../TattooAdmin/TattooAdmin";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Tattoo(props) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -30,6 +32,17 @@ export default function Tattoo(props) {
   const [projectModal, setProjectModal] = useState(false);
   const [ModalMenu, setModalMenu] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
+
+  const error = (txt) => {
+    toast.error(txt);
+  };
+  const warning = (txt) => {
+    toast.warning(txt);
+  };
+  const success = (txt) => {
+    toast.success(txt);
+  };
+
   if (projectModal || showImg) {
     document.body.style.overflow = "hidden";
   } else {
@@ -142,18 +155,28 @@ export default function Tattoo(props) {
           id: flash._id,
           message: messageToBook,
         });
-
-        setValidationMessage(
-          "La demande de réservation à été envoyée. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
+        setFirstname("");
+        setLastname("");
+        setMail("");
+        setNumber("");
+        setCondition(false);
+        setNewsLetter(false);
+        success(
+          ' "La demande de réservation à été envoyée. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."'
         );
+        // setValidationMessage(
+        //   "La demande de réservation à été envoyée. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
+        // );
       } else {
-        setErrorMessageToBook(
-          "Certains champs obligatoires n'ont pas été complétés. "
-        );
+        error("Certains champs obligatoires n'ont pas été complétés. ");
+        // setErrorMessageToBook(
+        //   "Certains champs obligatoires n'ont pas été complétés. "
+        // );
       }
     } catch (error) {
-      console.log(error);
-      setErrorMessageToBook("Une erreur est survenue.");
+      error("Une erreur est survenue.");
+      //   console.log(error);
+      //   setErrorMessageToBook("Une erreur est survenue.");
     }
   };
 
@@ -238,6 +261,9 @@ export default function Tattoo(props) {
               id={id}
               server={props.server}
               setFlash={setFlash}
+              success={success}
+              warning={warning}
+              error={error}
             />
           ) : (
             <div>
@@ -260,7 +286,7 @@ export default function Tattoo(props) {
                       onChange={(event) => {
                         handleOnChange(event.target.value, setFirstname);
                       }}
-                      placeholder="Prénom"
+                      placeholder="Prénom *"
                       required
                     />
                     <input
@@ -269,7 +295,7 @@ export default function Tattoo(props) {
                       onChange={(event) => {
                         handleOnChange(event.target.value, setLastname);
                       }}
-                      placeholder="Nom"
+                      placeholder="Nom *"
                       required
                     />
                     <input
@@ -278,7 +304,7 @@ export default function Tattoo(props) {
                       onChange={(event) => {
                         handleOnChange(event.target.value, setMail);
                       }}
-                      placeholder="E-mail"
+                      placeholder="E-mail *"
                       required
                     />
                     <input
@@ -287,7 +313,7 @@ export default function Tattoo(props) {
                       onChange={(event) => {
                         handleOnChange(event.target.value, setNumber);
                       }}
-                      placeholder="Numéro de téléphone"
+                      placeholder="Numéro de téléphone *"
                       required
                     />
                     <textarea
@@ -299,7 +325,7 @@ export default function Tattoo(props) {
                       onChange={(event) => {
                         handleOnChange(event.target.value, setmessageToBook);
                       }}
-                      placeholder="Entrez une description de vos attentes(emplacement, taille, modification...)"
+                      placeholder="Entrez une description de vos attentes(emplacement, taille, modification...) *"
                     ></textarea>
                     <div className="checkbox">
                       <input
@@ -314,14 +340,14 @@ export default function Tattoo(props) {
                       />
                       <p>
                         En cochant cette case,vous acceptez d'être recontacté(e)
-                        pour la suite de la réservation.
+                        pour la suite de la réservation. *
                       </p>
                     </div>
                     <div className="checkbox">
                       <input
                         type="checkbox"
-                        name="condition"
-                        id="condition"
+                        name="newsLetter"
+                        id="newsLetter"
                         onChange={(event) => {
                           setNewsLetter(!newsLetter);
                         }}
@@ -333,11 +359,9 @@ export default function Tattoo(props) {
                         mes dernières créations artistiques.
                       </p>
                     </div>
-                    {errorMessageToBook && (
-                      <div className="error">
-                        <p>{errorMessageToBook}</p>
-                      </div>
-                    )}
+                    <p style={{ color: "red", fontWeight: "bold" }}>
+                      Les champs avec un (*) sont obligatoires.
+                    </p>
                     <input type="submit" value="Valider" />
                   </form>
                 )}
@@ -391,6 +415,9 @@ export default function Tattoo(props) {
       )}
       {loginModal && (
         <Login
+          success={success}
+          warning={warning}
+          error={error}
           server={props.server}
           setLoginModal={setLoginModal}
           adminToken={props.adminToken}
@@ -442,6 +469,18 @@ export default function Tattoo(props) {
           </button>
         </nav>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </main>
   );
 }

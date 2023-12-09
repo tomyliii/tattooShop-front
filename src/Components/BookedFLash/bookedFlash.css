@@ -110,22 +110,35 @@
 @media screen and (max-width: 992px) {
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 770px) {
   .booked-list > div {
-    width: calc((100% - 20px) / 2);
+    width: 100%;
     background-color: rgba(227, 192, 192, 0.132);
     border-radius: 5px;
     display: flex;
 
     flex-direction: column;
-
-    height: 250px;
+    height: fit-content;
+    /* height: 250px; */
     transition: all 0.5s ease-in-out;
   }
   .booked-list > div > a {
     width: 100%;
-    height: calc((100% - 20px) / 2);
+    aspect-ratio: 1;
     flex: 1;
     display: flex;
+    overflow: hidden;
   }
+}
+
+.book-info {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  flex: 2;
+  word-break: break-all;
 }

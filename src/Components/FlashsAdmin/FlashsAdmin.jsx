@@ -42,7 +42,7 @@ export default function FlashsAdmin(props) {
       console.log(error);
       setErrorMessage("Une erreur est survenue.");
     }
-  }, []);
+  }, [props.statusFlashAdd]);
 
   useEffect(() => {
     try {
