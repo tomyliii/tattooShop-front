@@ -53,6 +53,7 @@ const Contact = (props) => {
         setLastname("");
         setMail("");
         setNumber("");
+        setmessage("");
         setCondition(false);
         setNewsLetter(false);
         props.success("Votre message à bien été envoyée. A trés bientôt.");

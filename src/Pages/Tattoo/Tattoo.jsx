@@ -158,6 +158,7 @@ export default function Tattoo(props) {
         setFirstname("");
         setLastname("");
         setMail("");
+        setmessageToBook("");
         setNumber("");
         setCondition(false);
         setNewsLetter(false);
@@ -287,7 +288,6 @@ export default function Tattoo(props) {
                         handleOnChange(event.target.value, setFirstname);
                       }}
                       placeholder="Prénom *"
-                      required
                     />
                     <input
                       type="text"
@@ -296,7 +296,6 @@ export default function Tattoo(props) {
                         handleOnChange(event.target.value, setLastname);
                       }}
                       placeholder="Nom *"
-                      required
                     />
                     <input
                       type="email"
@@ -305,7 +304,6 @@ export default function Tattoo(props) {
                         handleOnChange(event.target.value, setMail);
                       }}
                       placeholder="E-mail *"
-                      required
                     />
                     <input
                       type="number"
@@ -314,7 +312,6 @@ export default function Tattoo(props) {
                         handleOnChange(event.target.value, setNumber);
                       }}
                       placeholder="Numéro de téléphone *"
-                      required
                     />
                     <textarea
                       name="message"
@@ -336,7 +333,6 @@ export default function Tattoo(props) {
                           setCondition(!conditions);
                         }}
                         checked={conditions}
-                        required
                       />
                       <p>
                         En cochant cette case,vous acceptez d'être recontacté(e)

@@ -48,7 +48,7 @@ function Project(props) {
             headers: { "Content-Type": "multipart/form-data" },
           }
         );
-        props.success("Votre message à bien été envoyée. A trés bientôt.");
+        props.success("Votre projet à bien été envoyée. A trés bientôt.");
         setValidationMessage(
           "Votre projet à été envoyé. Vous aurez une réponse trés prochainement. Merci de votre confiance. A trés bientôt."
         );
