@@ -66,7 +66,7 @@ const Contact = (props) => {
         // setErrorMessage("Une erreur est survenue.");
       }
     } else {
-      props.error("Veuillez remplir tous les champs obligatoire.");
+      props.error("Veuillez remplir tous les champs obligatoires.");
       // setErrorMessage("Certains champs obligatoires n'ont pas été complétés. ");
     }
   };
