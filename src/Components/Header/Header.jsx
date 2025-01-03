@@ -111,7 +111,7 @@ function Header(props) {
               </h1>
               <img
                 src={Logo}
-                alt="logo de white fox ink"
+                alt="logo de wild fox ink"
                 className="hero-logo"
               />
             </div>
