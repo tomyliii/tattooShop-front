@@ -97,10 +97,9 @@ function Header(props) {
             <div>
               <h1 className="title">
                 <span className="letter">W</span>
-                <span className="letter">h</span>
                 <span className="letter">i</span>
-                <span className="letter">t</span>
-                <span className="letter">e</span>
+                <span className="letter">l</span>
+                <span className="letter">d</span>
                 <span className="letter">&nbsp;</span>
                 <span className="letter">F</span>
                 <span className="letter">o</span>
